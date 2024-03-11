@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "Glitten All Caps";
+    src: url(fonts/glitten.otf);
+}
+
+.resp-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.rounded-card-4 {
+    border-radius: 4px;
+}
+
+.hero-primary {
+    background-color: $hero-primary-bg;
+}
+
+.fit-content {
+    width: fit-content;
+    height: fit-content;
+}
+
+.glitten-all-caps {
+    font-family: "Glitten All Caps", serif;
+}
