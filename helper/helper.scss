@@ -3,13 +3,22 @@
     src: url(fonts/glitten.otf);
 }
 
+
+$bg-primary-red: #c0304f;
+$font-tertiary:#929292;
+$hero-primary-bg: #F6F2EB;
+
 .resp-container {
     width: 100%;
     max-width: 1000px;
 }
 
+.hidden-scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
 .rounded-card-4 {
-    border-radius: 4px;
+    border-radius: 15px;
 }
 
 .hero-primary {
@@ -23,4 +32,29 @@
 
 .glitten-all-caps {
     font-family: "Glitten All Caps", serif;
+}
+
+.font-tertiary{
+color: $font-tertiary !important;
+}
+
+.verticalSpacer{
+    width: 2px;
+    background-color: rgba($color: #bAA7A3, $alpha: 0.5);
+    height: 50%;
+}
+
+
+
+// footer section
+.illustration-footer {
+    bottom: -50px;
+    right: 0px;
+    transform: translate(0%);
+}
+
+.footer-section {
+    background: url(/images/footer/footer.png) no-repeat;
+    background-position: 100% 50%;
+    background-size: cover;
 }

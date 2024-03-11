@@ -1,9 +1,21 @@
-@import url(./helper/helper.scss);
+@import './helper/helper.scss';
 
 $bg-primary-red: #c0304f;
 $hero-primary-bg: #F6F2EB;
+$bg-primary-white:#fcfcfc;
+$banner-color:#FFE6E0;
 
+.primary-white{
+    background-color: $bg-primary-white;
+}
 
+.primary-banner{
+    background-color: $banner-color;
+}
+
+.h-85{
+    height: 85%;
+}
 
 // navbar
 .navbar-logo {
@@ -35,19 +47,24 @@ $hero-primary-bg: #F6F2EB;
 
 // heroo Section
 .hero-image {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 150px 150px;
-
-    .item-md-span-2 {
-        order: -1;
-        grid-column: span 2;
-        height: 350px;
-    }
-
-    .item {
-        min-height: 150px;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.8fr 0.8fr 1.35fr;
+    .item:not(.item-md-span-2){
         width: 100%;
+        height: 80%;
+    }
+    .item-mary{
+        scale: 0.8;
+    }
+    .item-md-span-2 {
+        order: 999;
+        width: 100%;
+        height: 100%;
+        grid-column: span 2;
+        overflow: hidden;
     }
 }
 
@@ -61,7 +78,16 @@ $hero-primary-bg: #F6F2EB;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 500px 300px 150px;
+    grid-template-rows: 500px 300px 200px;
+
+    .item:nth-child(1) img{
+        height: 500px;
+    }
+
+    .item-doll{
+        background: url(/images/volunteer/doll.svg) no-repeat center;
+        background-size: cover;
+    }
 }
 
 
@@ -70,46 +96,91 @@ $hero-primary-bg: #F6F2EB;
 }
 
 .potential {
-    min-height: 100vh;
 
-    // div {
-    //     flex-basis: 500px;
+    .potential-image{
+        width: 100%;
+        height: 100%;
+        max-height: 350px;
+    }
+
+    // .potential-image {
+    //     width: 90%;
+    //     height: 100%;
     // }
-
-    .potential-image {
-        width: 90%;
-        height: 250px;
-    }
 }
 
-@media screen and (min-width:450px) {
-    .hero-image {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr 200px 200px;
-    }
-
-    .item-md-span-2 {
-        order: unset;
-        grid-column: span 2;
-    }
-
-
-
+.share-icon {
+    height: 50px;
+    width: 50px;
+    border: 2px solid #DDDDDD;
 }
 
 
-@media screen and (min-width:600px) {
+.event-card {
+    max-width: 260px;
+
+    .event-image {
+        max-height: 250px;
+    }
+
+}
+
+.overlap-image{
+    margin-left: -30px;
+}
+
+.form-subscribe {
+    
+    &>div {
+        min-height: 445px;
+        max-width: 670px;
+
+        
+    }
+    .featured{
+        background:url(./images/subscribe/subscribe.png) no-repeat center;
+        background-size: cover;
+
+        &>div{
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+
+    input[type="checkbox"]:checked{
+        background-color: #000;
+    }
+}
+
+@media screen and (min-width:400px) {
+    .hero-image{
+        grid-template-rows: 0.8fr 0.8fr 1.6fr;
+    }
+}
+
+
+
+@media screen and (min-width:700px) {
 
     .hero-image {
-        grid-template-columns: 160px 1fr 160px;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 300px;
 
         .item:nth-child(1) {
             order: -1;
         }
 
+        .item-crown{
+            scale: 1.1;
+        }
+        .item-flower{
+            max-width: 280px;
+        }
+
         .item-md-span-2 {
             order: unset;
+            flex-shrink: 0;
+            max-height: 100%;
             grid-row: span 2;
             grid-column: span 1;
         }
@@ -124,25 +195,17 @@ $hero-primary-bg: #F6F2EB;
             grid-column: span 2;
         }
     }
-}
 
-@media screen and (min-width:1000px) {
+    .event-card {
+        max-width: 540px;
 
-    .hero-image {
-        grid-template-columns: 230px 1fr 230px;
-        grid-template-rows: repeat(2, 1fr);
-
-        .item:nth-child(1) {
-            order: -1;
-        }
-
-        .item-md-span-2 {
-            order: unset;
-            height: 500px;
-            grid-row: span 2;
-            grid-column: span 1;
+        .event-image {
+            max-height: unset;
         }
     }
 
+}
+
+@media screen and (min-width:1000px) {
 
 }

@@ -1,8 +1,53 @@
+@font-face {
+  font-family: "Glitten All Caps";
+  src: url(fonts/glitten.otf);
+}
 .resp-container {
   width: 100%;
   max-width: 1000px;
 }
 
-.rounded-4 {
-  border-radius: 4px;
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.rounded-card-4 {
+  border-radius: 15px;
+}
+
+.hero-primary {
+  background-color: #F6F2EB;
+}
+
+.fit-content {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.glitten-all-caps {
+  font-family: "Glitten All Caps", serif;
+}
+
+.font-tertiary {
+  color: #929292 !important;
+}
+
+.verticalSpacer {
+  width: 2px;
+  background-color: rgba(186, 167, 163, 0.5);
+  height: 50%;
+}
+
+.illustration-footer {
+  bottom: -50px;
+  right: 0px;
+  transform: translate(0%);
+}
+
+.footer-section {
+  background: url(/images/footer/footer.png) no-repeat;
+  background-position: 100% 50%;
+  background-size: cover;
 }/*# sourceMappingURL=helper.css.map */
