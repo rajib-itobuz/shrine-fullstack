@@ -1,6 +1,14 @@
 @font-face {
   font-family: "Glitten All Caps";
-  src: url(fonts/glitten.otf);
+  src: url(/fonts/glitten.otf);
+}
+@font-face {
+  font-family: "Roboto Serif";
+  src: url(/fonts/roboto.ttf);
+}
+@font-face {
+  font-family: "Playfair";
+  src: url(/fonts/playfair.ttf);
 }
 .resp-container {
   width: 100%;
@@ -30,6 +38,14 @@
   font-family: "Glitten All Caps", serif;
 }
 
+.roboto-serif {
+  font-family: "Roboto Serif", serif;
+}
+
+.playfair {
+  font-family: "Playfair", serif;
+}
+
 .font-tertiary {
   color: #929292 !important;
 }
@@ -38,6 +54,30 @@
   width: 2px;
   background-color: rgba(186, 167, 163, 0.5);
   height: 50%;
+}
+
+.navbar-logo {
+  translate: 0% 30%;
+}
+
+.nav-item:hover .nav-link::before {
+  content: "";
+  position: absolute !important;
+  left: 0px;
+  bottom: 0px;
+  width: 75%;
+  background: #c0304f;
+  height: 2px;
+}
+
+.nav-item:hover .nav-link::after {
+  content: "";
+  position: absolute !important;
+  right: 0px;
+  bottom: 0px;
+  width: 20%;
+  background: #c0304f;
+  height: 2px;
 }
 
 .illustration-footer {

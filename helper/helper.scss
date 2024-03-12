@@ -1,11 +1,21 @@
 @font-face {
     font-family: "Glitten All Caps";
-    src: url(fonts/glitten.otf);
+    src: url(/fonts/glitten.otf);
+}
+
+@font-face {
+    font-family: "Roboto Serif";
+    src: url(/fonts/roboto.ttf);
+}
+
+@font-face {
+    font-family: "Playfair";
+    src: url(/fonts/playfair.ttf);
 }
 
 
 $bg-primary-red: #c0304f;
-$font-tertiary:#929292;
+$font-tertiary: #929292;
 $hero-primary-bg: #F6F2EB;
 
 .resp-container {
@@ -13,7 +23,7 @@ $hero-primary-bg: #F6F2EB;
     max-width: 1000px;
 }
 
-.hidden-scrollbar::-webkit-scrollbar{
+.hidden-scrollbar::-webkit-scrollbar {
     display: none;
 }
 
@@ -34,17 +44,48 @@ $hero-primary-bg: #F6F2EB;
     font-family: "Glitten All Caps", serif;
 }
 
-.font-tertiary{
-color: $font-tertiary !important;
+.roboto-serif {
+    font-family: "Roboto Serif", serif;
 }
 
-.verticalSpacer{
+.playfair {
+    font-family: "Playfair", serif;
+}
+
+.font-tertiary {
+    color: $font-tertiary !important;
+}
+
+.verticalSpacer {
     width: 2px;
     background-color: rgba($color: #bAA7A3, $alpha: 0.5);
     height: 50%;
 }
 
+// navbar
+.navbar-logo {
+    translate: 0% 30%;
+}
 
+.nav-item:hover .nav-link::before {
+    content: "";
+    position: absolute !important;
+    left: 0px;
+    bottom: 0px;
+    width: 75%;
+    background: $bg-primary-red;
+    height: 2px;
+}
+
+.nav-item:hover .nav-link::after {
+    content: "";
+    position: absolute !important;
+    right: 0px;
+    bottom: 0px;
+    width: 20%;
+    background: $bg-primary-red;
+    height: 2px;
+}
 
 // footer section
 .illustration-footer {

@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="hero-primary">
+<body class="d-flex flex-column">
 
-    <nav class="navbar navbar-expand-lg border border-0 border-bottom mb-3 nav-height hero-primary">
+    <nav class="navbar navbar-expand-lg border border-0 border-bottom nav-height hero-primary">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center d-lg-none navbar-logo-2" href="#">
                 <img src="images/navbar/logo-min.svg" alt="logo" height="50px">
@@ -53,53 +53,75 @@
                         <a class="" aria-current="page" href="#"><img src="images/navbar/search.svg" alt="search"></a>
                     </li>
                     <li class="nav-item cart">
-
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="container-lg flex flex-column hero-primary">
-
-        <div class="hero-image">
-            <div class="item item-mary  bg-transparent d-flex justify-content-center align-items-center flex-column">
-                <img src="./images/hero/mary.png" class="object-fit-contain w-100 position-relative z-0 " alt="">
-                <h5>Enrgise your life</h5>
-                <p>Long established fact that</p>
+    <section class="hero-primary">
+        <div class="container-lg d-flex flex-column hero-primary">
+            <div class="hero-image">
+                <div
+                    class="item item-mary  bg-transparent d-flex justify-content-center align-items-center flex-column">
+                    <img src="./images/hero/mary.png" class="object-fit-contain w-100 position-relative z-0 " alt="">
+                    <h5>Enrgise your life</h5>
+                    <p>Long established fact that</p>
+                </div>
+                <div class="item item-md-span-2 position-relative z-3 ">
+                    <img src="./images/hero/jesus.png" class="w-100 object-fit-contain position-absolute bottom-0 "
+                        alt="">
+                </div>
+                <div class="item"><img src="./images/hero/crown.svg" class="w-100 item-crown h-100 object-fit-contain "
+                        alt="">
+                </div>
+                <div class="item item-flower d-flex justify-content-start align-items-center flex-column"><img
+                        src="./images/hero/flower.png" class="w-75" alt="">
+                    <h5>Faith in Action,<br />Love in Motion</h5>
+                </div>
+                <div class="item d-flex flex-column justify-content-end ">
+                    <h3>Spirituality
+                        souls</h3>
+                    <p class="mt-2 mt-md-5">Long established fact that a reader will be distracted by the readable
+                        content
+                        of a page.</p>
+                </div>
             </div>
-            <div class="item item-md-span-2 position-relative z-3 ">
-                <img src="./images/hero/jesus.png" class="w-100 object-fit-contain position-absolute bottom-0 " alt="">
-            </div>
-            <div class="item"><img src="./images/hero/crown.svg" class="w-100 item-crown h-100 object-fit-contain "
-                    alt="">
-            </div>
-            <div class="item item-flower d-flex justify-content-start align-items-center flex-column"><img
-                    src="./images/hero/flower.png" class="w-75" alt="">
-                <h5>Faith in Action,<br />Love in Motion</h5>
-            </div>
-            <div class="item d-flex flex-column justify-content-end ">
-                <h3>Spirituality
-                    souls</h3>
-                <p class="mt-2 mt-md-5">Long established fact that a reader will be distracted by the readable content
-                    of a page.</p>
+            <div class="primary-white hero-banner mt-3 row position-relative">
+                <img src="./images/hero/explore.png" width="130px" height="130px" alt=""
+                    class="position-absolute object-fit-contain translate-middle-y translate-middle-x z-3">
+                <div class="col-6 col-md-3 mt-3 d-flex flex-column align-items-center justify-content-center">
+                    <h3 class="text-capitalize roboto-serif fw-light fs-6"><em class="fs-3 fit-content playfair">Faith
+                        </em>in action,</h3>
+                    <h3 class="text-capitalize roboto-serif fw-light fs-6">Love
+                        in Motion</h3>
+                </div>
+                <div class="col-6 col-md-6 mt-3 d-flex mb-2 align-items-center justify-content-center fw-light">
+                    Long established fact that a reader will be distracted by the readable content of a page when.Long
+                    established fact that a reader will be distracted by the readable content.
+                </div>
+                <div
+                    class="col-6 col-md-3 mt-3 d-flex flex-column mb-2 align-items-center justify-content-center fw-light">
+                    <h3>4.8/4</h3>
+                    <p>Explore our trust<br>score & customer.</p>
+                </div>
             </div>
         </div>
-        <div class="hero-banner primary-white w-100"></div>
+
     </section>
 
-    <section class="container-lg bg-white">
-        <div class="volunteer p-3 p-md-5 ">
-            <div class="item h-75 d-flex justify-content-center align-items-start gap-3  overflow-hidden ">
+    <section class="container-lg">
+        <div class="row p-3 p-md-5 gy-5">
+            <div class="col-12 col-md-7 d-flex justify-content-center align-items-start gap-3  overflow-hidden ">
                 <div class="h-100 rounded-card-4 overflow-hidden ">
                     <img src="/images/volunteer/castle.svg" alt="" class=" object-fit-cover" srcset="">
                 </div>
                 <div class="h-85 rounded-card-4 overflow-hidden ">
-                    <img src="/images/volunteer/doll.svg" alt="" class="w-100 object-fit-cover" srcset="">
+                    <img src="/images/volunteer/doll.svg" alt="" class="w-100 h-100 object-fit-cover" srcset="">
 
                 </div>
             </div>
-            <div class="item ps-5">
+            <div class="col-12 col-md-5 ps-md-5">
                 <h4 class="fs-1 border-3 ps-3 border-danger border-start w-100">We call price<br />the Lord</h4>
                 <p>A long established fact that a reader will be distracted by the readable content of a page when
                     looking.</p>
@@ -120,32 +142,30 @@
                     </div>
                 </div>
             </div>
-            <div
-                class="item primary-banner d-flex flex-column flex-md-row justify-content-around align-items-center p-3 px-4">
-                <div class="d-flex me-2">
-                    <img src="./images/volunteer/linda.png" alt="" width="60px" class="">
-                    <img src="./images/volunteer/john.png" alt="" width="60px" class="overlap-image">
-                    <img src="./images/volunteer/jane.png" alt="" width="60px" class="overlap-image">
-                    <img src="./images/volunteer/chris.png" alt="" width="60px" class="overlap-image">
+            <div class="col-12 primary-banner rounded-card-4 row px-4 py-3 mt-4">
+                <div class="col-12 col-md-3 d-flex me-2">
+                    <img src="./images/volunteer/linda.png" alt="" height="50px" class="">
+                    <img src="./images/volunteer/john.png" alt="" height="50px" class="overlap-image">
+                    <img src="./images/volunteer/jane.png" alt="" height="50px" class="overlap-image">
+                    <img src="./images/volunteer/chris.png" alt="" height="50px" class="overlap-image">
 
                 </div>
-
-                <div class="verticalSpacer me-3 d-none d-md-block"></div>
-
-                <div class="d-flex w-100 align-items-center ">
-                    <h4 class="">Building Bridges of Faith, Reaching<br />Hearts with Love.</h4>
-                    <button class="btn btn-dark  px-4 ms-auto py-2">Join us</button>
+                <div class="col-12 col-md-9 row d-flex align-items-center ">
+                    <h4 class="col-12 col-md-9">Building Bridges of Faith, Reaching<br />Hearts with Love.
+                    </h4>
+                    <button class="col-12 col-md-3 custom-button btn btn-dark  px-4 ms-auto py-2">Join us</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container-md bg-white ">
-        <div class="quote p-3 p-md-5 d-flex flex-md-row align-items-center flex-column-reverse gap-5 ">
-            <div class="w-100 h-100 d-flex flex-column justify-content-center ">
+    <section class="container-md">
+        <div class="p-3 p-md-5 row ">
+            <div class="col-12 col-md-7 d-flex flex-column justify-content-center ">
                 <h1 class="fs-1 border-3 ps-3 border-danger border-start w-100">Faithful hearts,<br>compassionate hands
                 </h1>
-                <h5 class="my-3">A long established fact that a reader will be distracted by the readable content of a page when
+                <h5 class="my-3">A long established fact that a reader will be distracted by the readable content of a
+                    page when
                     looking.</h5>
                 <img src="./images/quote/quote.png" width="150px" class="my-3" alt="">
                 <h5>“I love you when you bow in your mosque, kneel in your temple, pray in your church. For you and I
@@ -154,35 +174,37 @@
 
                 <h3><img src="./images/quote/quotemarks.svg" class="me-2" alt="">Martin Luther</h3>
             </div>
-            <img src="./images/quote/book.svg" width="300px" height="550px" class="rounded-pill object-fit-cover" alt="" srcset="">
+            <div class="col-12 col-md-5">
+
+                <img src="./images/quote/book.svg" class="rounded-pill h-100 w-100 object-fit-cover" alt="" srcset="">
+            </div>
         </div>
     </section>
 
-
-    <section class="container-md">
-        <div class="potential p-3 p-md-5 d-flex flex-sm-row flex-column-reverse gap-5">
-            <div class="bg-info-subtle p-3 w-100 h-100">
-                <img src="./images/potential/church.svg" class="potential-image object-fit-cover rounded-card-4"
-                    alt="">
-                <div>
-                    <h4 class="fs-6 my-4">“I love you when you bow in your mosque, kneel in your temple, pray in your church.
-                        For you and
-                        I
-                        are sons of one religion, and it is the spirit”“I love you when you bow in your mosque, kneel in
-                        your temple. mosque, kneel in your
-                        “I love you when you bow in your .</h4>
-                    <button class="fit-content btn btn-outline-dark ">Read More</button>
-                </div>
+    <section class="container-md ">
+        <div class="p-3 p-md-5 row">
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center ">
+                <img src="./images/potential/church.svg" class="potential-image object-fit-cover rounded-card-4" alt="">
+                <h4 class="fs-6 my-4 potential-image">“I love you when you bow in your mosque, kneel in your temple,
+                    pray in your
+                    church.
+                    For you and
+                    I
+                    are sons of one religion, and it is the spirit”“I love you when you bow in your mosque, kneel in
+                    your temple. mosque, kneel in your
+                    “I love you when you bow in your .</h4>
+                <button class="fit-content btn btn-outline-dark ">Read More</button>
             </div>
-            <div class="bg-success-subtle p-3 w-100 h-100">
-                <div>
-                    <h4 class="fs-1 border-3 ps-3 border-danger border-start">Unleash the potential about us</h4>
-                    <h3 class="fs-6 my-4">A long established fact that a reader will be distracted by the readable content of
-                        a page when looking.A long established fact that a reader will be distracted by the readable
-                        content of a page when looking.</h3>
-                </div>
-                <img src="./images/potential/goldenbowl.png" class="potential-image object-fit-cover rounded-card-4" alt="">
+            <div class="col-12 order-first order-md-0 col-md-6 d-flex flex-column justify-content-center ">
 
+                <h4 class="fs-1 border-3 ps-3 border-danger border-start">Unleash the potential about us</h4>
+                <h3 class="fs-6 my-4 potential-image">A long established fact that a reader will be distracted by the
+                    readable
+                    content of
+                    a page when looking.A long established fact that a reader will be distracted by the readable
+                    content of a page when looking.</h3>
+                <img src="./images/potential/goldenbowl.png" class="potential-image object-fit-cover rounded-card-4"
+                    alt="">
             </div>
         </div>
     </section>
@@ -190,9 +212,40 @@
     <section class="container-md p-3 p-md-5">
         <div class="d-flex flex-column flex-md-row justify-content-between heading">
         </div>
+    </section>
 
-        <!-- <div class="d-flex gap-2 mt-5 hidden-scrollbar overflow-x-scroll cardContainer">
-        </div> -->
+    <section class="container-md p-3 p-md-5">
+        <div class="d-flex flex-md-row flex-column">
+            <div class="w-100">
+                <h3 class="fs-1 border-3 ps-3 border-danger border-start text-capitalize">Growing Stronger in<br> God’s
+                    our work</h3>
+                <p class="my-4">A long established fact that a reader will be distracted by the readable content of a
+                    page when
+                    looking.A long established fact that a reader will be distracted by the readable.</p>
+                <div class="form-check my-2">
+                    <input class="form-check-input" checked disabled type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Divide the group into smaller teams.
+                    </label>
+                </div>
+                <div class="form-check my-2">
+                    <input class="form-check-input" disabled checked type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Give each team a Bible verse or story.
+                    </label>
+                </div>
+                <div class="form-check my-2">
+                    <input class="form-check-input" disabled checked type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Ask each team to act out the Bible verse or story.
+                    </label>
+                </div>
+                <button class="btn btn-dark mt-5">Learn More</button>
+            </div>
+            <div class="w-50">
+                <img src="./images/grow/girlpray.png" alt="">
+            </div>
+        </div>
     </section>
 
     <section class="container-md p-3 p-md-5">

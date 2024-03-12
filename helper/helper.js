@@ -106,48 +106,93 @@ export const createEventCard = ({ imgUrl, title, subtitle, button, date, locatio
 
 }
 
-export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl,readTime, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const cardWrapper = document.createElement('div');
     cardWrapper.setAttribute('class', 'card flex-shrink-0');
     cardWrapper.setAttribute('style', 'max-width: 330px;aspect-ratio:1');
 
     const cardImage = document.createElement('img');
-    cardImage.src=imgUrl
+    cardImage.src = imgUrl
     cardImage.setAttribute('class', `card-img-top ${imgUrl}`);
-    cardImage.alt=title;
+    cardImage.alt = title;
 
     const cardBody = document.createElement('div');
     cardBody.setAttribute('class', 'card-body');
 
     const cardTitle = document.createElement('h5');
     cardTitle.setAttribute('class', 'card-title');
-    cardTitle.innerHTML=title;
+    cardTitle.innerHTML = title;
 
 
     const cardText = document.createElement('p');
     cardText.setAttribute('class', 'card-text py-3');
-    cardText.innerHTML=subtitle;
+    cardText.innerHTML = subtitle;
 
 
     const userDiv = document.createElement('div');
     userDiv.setAttribute('class', 'd-flex align-items-center');
 
 
-    const userImg=document.createElement("img");
-    userImg.src=userImgUrl;
-    userImg.alt="user";
+    const userImg = document.createElement("img");
+    userImg.src = userImgUrl;
+    userImg.alt = "user";
 
-    const readTimeText=document.createElement("p");
-    readTimeText.textContent=readTime;
-    readTimeText.setAttribute("class","m-0")
-    
-    
-    userDiv.append(userImg,readTimeText);
-    cardBody.append(cardTitle,cardText,userDiv);
-    cardWrapper.append(cardImage,cardBody);
+    const readTimeText = document.createElement("p");
+    readTimeText.textContent = readTime;
+    readTimeText.setAttribute("class", "m-0")
 
-    
+
+    userDiv.append(userImg, readTimeText);
+    cardBody.append(cardTitle, cardText, userDiv);
+    cardWrapper.append(cardImage, cardBody);
+
+
     return cardWrapper;
 
+}
+
+
+export const createTeamCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+    const cardWrapper = document.createElement('div');
+    cardWrapper.setAttribute('class', 'card flex-shrink-0');
+    cardWrapper.setAttribute('style', 'max-width: 330px;aspect-ratio:1');
+
+    const cardImage = document.createElement('img');
+    cardImage.src = imgUrl
+    cardImage.setAttribute('class', `card-img-top ${imgUrl}`);
+    cardImage.alt = title;
+
+    const cardBody = document.createElement('div');
+    cardBody.setAttribute('class', 'card-body');
+
+    const cardTitle = document.createElement('h5');
+    cardTitle.setAttribute('class', 'card-title');
+    cardTitle.innerHTML = title;
+
+
+    const cardText = document.createElement('p');
+    cardText.setAttribute('class', 'card-text py-3');
+    cardText.innerHTML = subtitle;
+
+
+    const userDiv = document.createElement('div');
+    userDiv.setAttribute('class', 'd-flex align-items-center');
+
+
+    const userImg = document.createElement("img");
+    userImg.src = userImgUrl;
+    userImg.alt = "user";
+
+    const readTimeText = document.createElement("p");
+    readTimeText.textContent = readTime;
+    readTimeText.setAttribute("class", "m-0")
+
+
+    userDiv.append(userImg, readTimeText);
+    cardBody.append(cardTitle, cardText, userDiv);
+    cardWrapper.append(cardImage, cardBody);
+
+
+    return cardWrapper;
 }
