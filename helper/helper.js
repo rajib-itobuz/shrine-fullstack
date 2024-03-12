@@ -9,7 +9,7 @@ export const cartWidget = () => {
     cartIconWrapper.setAttribute("class", "position-relative");
 
     const cartIcon = document.createElement("img");
-    cartIcon.src = "images/navbar/bag.svg";
+    cartIcon.src = "/images/navbar/bag.svg";
     cartIcon.alt = "bag";
 
     const cartBadge = document.createElement("span");
@@ -26,16 +26,18 @@ export const cartWidget = () => {
 
 export const createHeading = (headingElement, headingObject) => {
     const heading = document.createElement("h4");
-    heading.setAttribute("class", "fs-1 border-3 ps-3 border-danger border-start w-100");
+    heading.setAttribute("class", "fs-1 my-3 border-3 ps-3 border-danger border-start w-100");
     heading.innerHTML = headingObject.heading;
 
 
     const subHeading = document.createElement("h5");
-    subHeading.setAttribute("class", "fs-6");
+    subHeading.setAttribute("class", "fs-6 mw-75");
+
     subHeading.innerText = headingObject.subHeading;
 
     headingElement.append(heading, subHeading);
 }
+
 
 export const createEventCard = ({ imgUrl, title, subtitle, button, date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
@@ -110,7 +112,7 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
     const cardWrapper = document.createElement('div');
     cardWrapper.setAttribute('class', 'card flex-shrink-0');
-    cardWrapper.setAttribute('style', 'max-width: 330px;aspect-ratio:1');
+    cardWrapper.setAttribute('style', 'max-width: 280px;aspect-ratio:1');
 
     const cardImage = document.createElement('img');
     cardImage.src = imgUrl
@@ -152,47 +154,82 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
 }
 
+export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => { }
 
-export const createTeamCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
-    const cardWrapper = document.createElement('div');
-    cardWrapper.setAttribute('class', 'card flex-shrink-0');
-    cardWrapper.setAttribute('style', 'max-width: 330px;aspect-ratio:1');
+export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
-    const cardImage = document.createElement('img');
-    cardImage.src = imgUrl
-    cardImage.setAttribute('class', `card-img-top ${imgUrl}`);
-    cardImage.alt = title;
+    const teamWrapper = document.createElement('div');
+    teamWrapper.setAttribute('class', 'col-6 col-lg-3');
 
-    const cardBody = document.createElement('div');
-    cardBody.setAttribute('class', 'card-body');
-
-    const cardTitle = document.createElement('h5');
-    cardTitle.setAttribute('class', 'card-title');
-    cardTitle.innerHTML = title;
+    const cardDiv = document.createElement('div');
+    cardDiv.setAttribute('class', 'card border border-0');
 
 
-    const cardText = document.createElement('p');
-    cardText.setAttribute('class', 'card-text py-3');
-    cardText.innerHTML = subtitle;
+    const imgElement = document.createElement('img');
+    imgElement.src = imgUrl;
+    imgElement.setAttribute('class', `rounded-pill ${imgCustomClass}`);
+    imgElement.alt = title;
+
+    const cardBodyWrapper = document.createElement('div');
+    cardBodyWrapper.setAttribute('class', `d-flex flex-md-row flex-column-reverse gap-2 justify-content-md-evenly align-items-center mt-3 ${bodyCustomClass}`);
+
+    const shareIconDiv = document.createElement('div');
+    shareIconDiv.setAttribute('class', 'share-icon rounded-circle d-flex justify-content-center align-items-center');
+    shareIconDiv.role = "button"
 
 
-    const userDiv = document.createElement('div');
-    userDiv.setAttribute('class', 'd-flex align-items-center');
+    const shareIcon = document.createElement('img');
+    shareIcon.src = './images/team/share.svg';
+    shareIcon.alt = 'share-icon';
+
+    const nameWrapper = document.createElement('div');
+
+    const name = document.createElement('h4');
+    name.setAttribute('class', 'fw-bold fs-5');
+    name.textContent = title;
+
+    const subTitle = document.createElement('h6');
+    subTitle.textContent = subtitle;
+
+    nameWrapper.append(name, subTitle);
+    shareIconDiv.appendChild(shareIcon);
+    cardBodyWrapper.append(shareIconDiv, nameWrapper);
+    cardDiv.append(imgElement, cardBodyWrapper);
+    teamWrapper.appendChild(cardDiv);
+
+    return teamWrapper;
+}
 
 
-    const userImg = document.createElement("img");
-    userImg.src = userImgUrl;
-    userImg.alt = "user";
+export const createAccordion = ({ title, subtitle, index }) => {
 
-    const readTimeText = document.createElement("p");
-    readTimeText.textContent = readTime;
-    readTimeText.setAttribute("class", "m-0")
+    const accordionWrapper = document.createElement('DIV');
+    accordionWrapper.setAttribute('class', 'accordion-item border-0 border-bottom flex-shrink-0');
+
+    const accordionTitle = document.createElement('H2');
+    accordionTitle.setAttribute('class', 'accordion-header');
+    accordionWrapper.appendChild(accordionTitle);
+
+    const accordionButton = document.createElement('BUTTON');
+    accordionButton.setAttribute('class', 'accordion-button collapsed');
+    accordionButton.setAttribute('type', 'button');
+    accordionButton.setAttribute('data-bs-toggle', 'collapse');
+    accordionButton.setAttribute('data-bs-target', `#collapse${index}`);
+    accordionButton.textContent = title;
+    accordionTitle.appendChild(accordionButton);
+
+    const accordionContentDiv = document.createElement('DIV');
+    accordionContentDiv.setAttribute('id', `collapse${index}`);
+    accordionContentDiv.setAttribute('class', 'accordion-collapse collapse');
+    accordionContentDiv.setAttribute('data-bs-parent', '#accordionExample');
+    accordionWrapper.appendChild(accordionContentDiv);
+
+    const accordionBody = document.createElement('DIV');
+    accordionBody.setAttribute('class', 'accordion-body');
+    accordionBody.textContent = subtitle;
+    accordionContentDiv.appendChild(accordionBody);
 
 
-    userDiv.append(userImg, readTimeText);
-    cardBody.append(cardTitle, cardText, userDiv);
-    cardWrapper.append(cardImage, cardBody);
+    return accordionWrapper;
 
-
-    return cardWrapper;
 }
