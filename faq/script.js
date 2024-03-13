@@ -32,7 +32,7 @@ const accordionFAQs = [
     },
 ]
 
-createHeading(headingElement, headings.heading,headings.subHeading,true);
+createHeading(headingElement, headings.heading, headings.subHeading, true);
 
 
 accordionFAQs.forEach((faq, index) => {

@@ -1,3 +1,5 @@
+const backendUrl = "http://localhost:3000"
+
 
 const cartItemCount = () => {
     return 2;
@@ -9,7 +11,7 @@ export const cartWidget = () => {
     cartIconWrapper.setAttribute("class", "position-relative");
 
     const cartIcon = document.createElement("img");
-    cartIcon.src = "/images/navbar/bag.svg";
+    cartIcon.src = "http://localhost:3000/images/navbar/bag.svg";
     cartIcon.alt = "bag";
 
     const cartBadge = document.createElement("span");
@@ -26,25 +28,29 @@ export const cartWidget = () => {
 
 export const navBar = (navbarBgClass) => {
     const navBar = document.querySelector(".navbar");
+    navBar.setAttribute("class", `navbar navbar-expand-lg border border-0 border-bottom nav-height ${navbarBgClass}`)
 
     const navbarBrandWrapper = document.createElement('DIV');
     navbarBrandWrapper.setAttribute('class', 'container');
 
-    const navbarBrand = document.createElement('A');
+    const navbarBrand = document.createElement('div');
     navbarBrand.setAttribute('class', 'navbar-brand d-flex align-items-center d-lg-none navbar-logo-2');
     navbarBrand.setAttribute('href', '#');
+
+    const navbarLogoMin = document.createElement('img');
+    navbarLogoMin.setAttribute('src', 'http://localhost:3000/images/navbar/logo-min.svg');
+    navbarLogoMin.setAttribute('alt', 'logo');
+    navbarLogoMin.setAttribute('width', '50px');
+
+
+    const navbarLogoText = document.createElement('h3');
+    navbarLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2');
+    navbarLogoText.innerText = "Shrine"
+    console.log(navbarLogoMin, navbarLogoText);
+    navbarBrand.append(navbarLogoMin, navbarLogoText);
+
     navbarBrandWrapper.appendChild(navbarBrand);
 
-    const navbarLogoMin = document.createElement('IMG');
-    navbarLogoMin.setAttribute('src', '/images/navbar/logo-min.svg');
-    navbarLogoMin.setAttribute('alt', 'logo');
-    navbarLogoMin.setAttribute('height', '50px');
-    navbarBrand.appendChild(navbarLogoMin);
-
-    const navbarLogoText = document.createElement('H3');
-    navbarLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2');
-    navbarBrand.appendChild(navbarLogoText);
-    navbarBrand.textContent = "SHRINE"
 
     const navbarToggle = document.createElement('BUTTON');
     navbarToggle.setAttribute('class', 'navbar-toggler');
@@ -93,8 +99,11 @@ export const navBar = (navbarBgClass) => {
     navbarLgLogo.setAttribute('class', `navbar-brand ${navbarBgClass} mx-3 position-relative navbar-logo d-none d-lg-inline-flex  align-items-center fit-content px-4`);
     navbarLgLogo.setAttribute('href', '#');
 
-
-    navbarLgLogo.appendChild(navbarLogoMin);
+    const navbarLogoLg = document.createElement('img');
+    navbarLogoLg.setAttribute('src', 'http://localhost:3000/images/navbar/logo-min.svg');
+    navbarLogoLg.setAttribute('alt', 'logo');
+    navbarLogoLg.setAttribute('width', '50px');
+    navbarLgLogo.appendChild(navbarLogoLg);
 
     const navbarLgLogoText = document.createElement('H3');
     navbarLgLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-3');
@@ -105,7 +114,7 @@ export const navBar = (navbarBgClass) => {
     const contactNavItem = createNavItem("Contacts");
 
     const searchIcon = document.createElement('IMG');
-    searchIcon.setAttribute('src', '/images/navbar/search.svg');
+    searchIcon.setAttribute('src', 'http://localhost:3000/images/navbar/search.svg');
     searchIcon.setAttribute('alt', 'search');
 
     const searchNavItem = createNavItem(searchIcon);
@@ -127,12 +136,12 @@ export const footer = (footerClass) => {
     footerLogoWrapper.setAttribute('class', 'container border-secondary border-0 border-bottom border-1 p-3 d-flex flex-column align-items-start align-items-lg-end flex-md-row justify-content-between ');
 
     const footerLogo = document.createElement('IMG');
-    footerLogo.setAttribute('src', '/images/footer/logo.svg');
+    footerLogo.setAttribute('src', 'http://localhost:3000/images/footer/logo.svg');
     footerLogo.setAttribute('alt', 'logo');
     footerLogoWrapper.appendChild(footerLogo);
 
     const footerText = document.createElement('P');
-    footerText.setAttribute('class', 'font-10 mt-3 font-mysecondary');
+    footerText.setAttribute('class', 'font-10 mt-3 font-tertiary');
     footerText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br> eiusmod tempor incididunt";
     footerLogoWrapper.appendChild(footerText);
 
@@ -205,12 +214,12 @@ export const footer = (footerClass) => {
 
     const newsLetterHeading = document.createElement('H3');
     newsLetterHeading.setAttribute('class', 'f2-bold font-20 text-white');
-    newsLetterHeading.innerText="Subscribe to our news Letter";
+    newsLetterHeading.innerText = "Subscribe to our news Letter";
     newsletterWrapper.appendChild(newsLetterHeading);
 
     const newsletterSubTitle = document.createElement('H4');
     newsletterSubTitle.setAttribute('class', 'my-4 font-16 font-tertiary');
-    newsletterSubTitle.innerText="Lorem ipsum dolor sit amet consectetur adipiscing elit\\n aliquam.";
+    newsletterSubTitle.innerText = "Lorem ipsum dolor sit amet consectetur adipiscing elit\\n aliquam.";
     newsletterWrapper.appendChild(newsletterSubTitle);
 
     const subscribeEmailInput = document.createElement('INPUT');
@@ -222,7 +231,7 @@ export const footer = (footerClass) => {
 
     const subscribeButton = document.createElement('BUTTON');
     subscribeButton.setAttribute('class', 'bg-primary-red border border-0 px-3 py-2 my-4 rounded rounded-3 text-white hover-icon');
-    subscribeButton.innerText="Subscribe";
+    subscribeButton.innerText = "Subscribe";
     newsletterWrapper.appendChild(subscribeButton);
 
     const footerCopyright = document.createElement('DIV');
@@ -230,14 +239,14 @@ export const footer = (footerClass) => {
 
     const copyrightText = document.createElement('P');
     copyrightText.setAttribute('class', 'my-4 font-10 font-tertiary');
-    copyrightText.innerHTML="Copyright &#169; 2022 Shrine | All Rights Reserved";
+    copyrightText.innerHTML = "Copyright &#169; 2022 Shrine | All Rights Reserved";
     footerCopyright.appendChild(copyrightText);
 
     const footerIconsWrapper = document.createElement('DIV');
     footerIconsWrapper.setAttribute('class', 'd-flex gap-3 mb-5 mb-md-0');
     footerCopyright.appendChild(footerIconsWrapper);
 
-    const createFooterIcon=(iconName,iconUrl)=>{
+    const createFooterIcon = (iconName, iconUrl) => {
         const footerIcon = document.createElement('IMG');
         footerIcon.setAttribute('role', 'button');
         footerIcon.setAttribute('src', iconUrl);
@@ -247,25 +256,25 @@ export const footer = (footerClass) => {
         return footerIcon
     }
 
-    
-    footerIconsWrapper.appendChild(createFooterIcon('instagram','/images/footer/instagram.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('twitter','/images/footer/twitter.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('whatsapp','/images/footer/whatsapp.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('youtube','/images/footer/youtube.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('facebook','/images/footer/facebook.svg'));
 
-    
-    footer.append(footerLogoWrapper,footerContainer,footerCopyright);
+    footerIconsWrapper.appendChild(createFooterIcon('instagram', 'http://localhost:3000/images/footer/instagram.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('twitter', 'http://localhost:3000/images/footer/twitter.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('whatsapp', 'http://localhost:3000/images/footer/whatsapp.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('youtube', 'http://localhost:3000/images/footer/youtube.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('facebook', 'http://localhost:3000/images/footer/facebook.svg'));
+
+
+    footer.append(footerLogoWrapper, footerContainer, footerCopyright);
 }
 
-export const createHeading = (headingElement, title, subtitle,spacing=false) => {
+export const createHeading = (headingElement, title, subtitle, spacing = false) => {
     const heading = document.createElement("h4");
-    heading.setAttribute("class", `font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing?'my-4':''}`);
+    heading.setAttribute("class", `font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing ? 'my-4' : ''}`);
     heading.innerHTML = title;
 
 
     const subHeading = document.createElement("h5");
-    subHeading.setAttribute("class", `font-16 mw-75 ${spacing?'pt-2':''}`);
+    subHeading.setAttribute("class", `font-16 mw-75 ${spacing ? 'pt-2' : ''}`);
     subHeading.innerText = subtitle;
 
     headingElement.append(heading, subHeading);
@@ -274,23 +283,23 @@ export const createHeading = (headingElement, title, subtitle,spacing=false) => 
 export const createEventCard = ({ imgUrl, title, subtitle, button, date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const card = document.createElement("div");
-    card.setAttribute("class", `card mb-3 flex-shrink-0 ${cardCustomClass}`);
+    card.setAttribute("class", `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}`);
 
     const rowWrapper = document.createElement("div");
     rowWrapper.setAttribute("class", "row g-0");
 
     const imageWrapper = document.createElement("div");
-    imageWrapper.setAttribute("class", "col-12 col-sm-4");
+    imageWrapper.setAttribute("class", "col-12 col-md-4");
 
 
     const image = document.createElement("img");
-    image.src = imgUrl;
-    image.setAttribute("class", `w-100 rounded-start object-fit-cover ${imgCustomClass}`);
+    image.src = backendUrl + imgUrl;
+    image.setAttribute("class", `w-100 h-100 object-fit-cover ${imgCustomClass}`);
     image.alt = title;
 
 
     const cardBodyWrapper = document.createElement("div");
-    cardBodyWrapper.setAttribute("class", "col-12 col-sm-8 d-flex align-items-center");
+    cardBodyWrapper.setAttribute("class", "col-12 col-md-8 d-flex align-items-center");
 
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", `card-body ${bodyCustomClass}`);
@@ -344,11 +353,11 @@ export const createEventCard = ({ imgUrl, title, subtitle, button, date, locatio
 export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const cardWrapper = document.createElement('div');
-    cardWrapper.setAttribute('class', 'card flex-shrink-0');
+    cardWrapper.setAttribute('class', 'card flex-shrink-0 position-relative z-1');
     cardWrapper.setAttribute('style', 'max-width: 280px;aspect-ratio:1');
 
     const cardImage = document.createElement('img');
-    cardImage.src = imgUrl
+    cardImage.src = backendUrl + imgUrl
     cardImage.setAttribute('class', `card-img-top ${imgUrl}`);
     cardImage.alt = title;
 
@@ -370,7 +379,7 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
 
     const userImg = document.createElement("img");
-    userImg.src = userImgUrl;
+    userImg.src = backendUrl + userImgUrl;
     userImg.alt = "user";
 
     const readTimeText = document.createElement("p");
@@ -389,12 +398,13 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
 export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
     const divWrapper = document.createElement("div");
-    divWrapper.setAttribute("class", "card p-3 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center");
+    divWrapper.setAttribute("class", "card p-3 hover-card border border-0 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center");
     divWrapper.setAttribute("style", "max-width:250px");
+    divWrapper.setAttribute("role", "button");
 
     const imgWrapper = document.createElement("img");
     imgWrapper.setAttribute("alt", title);
-    imgWrapper.setAttribute("src", imgUrl);
+    imgWrapper.setAttribute("src", backendUrl + imgUrl);
     imgWrapper.setAttribute("width", "50px");
 
 
@@ -421,9 +431,9 @@ export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = ''
     nextIconSpan.setAttribute("class", "rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100");
 
     const nextIcon = document.createElement("img");
-    nextIcon.src = "/images/icons/arrow-right.svg";
+    nextIcon.src = backendUrl + "/images/icons/arrow-right.svg";
     nextIcon.alt = "next-icon";
-    nextIcon.width = "20px";
+    nextIcon.setAttribute("width", "20px");
 
 
     nextIconSpan.appendChild(nextIcon);
@@ -438,14 +448,14 @@ export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = ''
 export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const teamWrapper = document.createElement('div');
-    teamWrapper.setAttribute('class', 'col-6 col-lg-3');
+    teamWrapper.setAttribute('class', 'col-6 col-sm-4 col-md-3 d-flex justify-content-center');
 
     const cardDiv = document.createElement('div');
-    cardDiv.setAttribute('class', 'card border border-0');
+    cardDiv.setAttribute('class', 'card team-card border border-0');
 
 
     const imgElement = document.createElement('img');
-    imgElement.src = imgUrl;
+    imgElement.src = backendUrl + imgUrl;
     imgElement.setAttribute('class', `rounded-pill ${imgCustomClass}`);
     imgElement.alt = title;
 
@@ -458,7 +468,7 @@ export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', b
 
 
     const shareIcon = document.createElement('img');
-    shareIcon.src = '/images/team/share.svg';
+    shareIcon.src = 'http://localhost:3000/images/team/share.svg';
     shareIcon.alt = 'share-icon';
 
     const nameWrapper = document.createElement('div');
