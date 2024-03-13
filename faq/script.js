@@ -1,6 +1,8 @@
-import { cartWidget, createAccordion, createHeading } from "../helper/helper.js";
+import { cartWidget, createAccordion, createHeading, navBar } from "../helper/helper.js";
 
+navBar('bg-white');
 cartWidget();
+
 
 const headingElement = document.querySelector('.heading');
 const accordionContainer = document.querySelector('.accordion');
@@ -30,7 +32,7 @@ const accordionFAQs = [
     },
 ]
 
-createHeading(headingElement, headings);
+createHeading(headingElement, headings.heading,headings.subHeading,true);
 
 
 accordionFAQs.forEach((faq, index) => {

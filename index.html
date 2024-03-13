@@ -12,52 +12,7 @@
 </head>
 
 <body class="d-flex flex-column">
-
-    <nav class="navbar navbar-expand-lg border border-0 border-bottom nav-height hero-primary">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center d-lg-none navbar-logo-2" href="#">
-                <img src="images/navbar/logo-min.svg" alt="logo" height="50px">
-                <h3 class="glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2">SHRINE</h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse me-lg-5" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto gap-4 mb-2 mb-lg-0  d-flex align-items-center justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link position-relative hover-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="#">Pages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" aria-current="page" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="#">Donation</a>
-                    </li>
-
-                    <a class="navbar-brand mx-3 position-relative navbar-logo d-none d-lg-inline-flex  align-items-center fit-content px-4"
-                        href="#"><img src="images/navbar/logo-min.svg" alt="logo">
-                        <h3 class="glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-3">SHRINE</h3>
-                    </a>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" aria-current="page" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="#">Contacts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="" aria-current="page" href="#"><img src="images/navbar/search.svg" alt="search"></a>
-                    </li>
-                    <li class="nav-item cart">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg border border-0 border-bottom nav-height hero-primary"></nav>
 
     <section class="hero-primary">
         <div class="container-lg d-flex flex-column hero-primary">
@@ -77,12 +32,13 @@
                 </div>
                 <div class="item item-flower p-0 p-md-3 d-flex justify-content-start align-items-center flex-column">
                     <img src="./images/hero/flower.png" class="w-75 h-75 object-fit-contain" alt="">
-                    <h5>Faith in Action,<br />Love in Motion</h5>
+                    <h5 class="font-20 fw-semibold ">Faith in Action,<br />Love in Motion</h5>
                 </div>
                 <div class="item d-flex flex-column justify-content-end ">
-                    <h3>Spirituality
+                    <h3 class="fw-semibold roboto-serif">Spirituality
                         souls</h3>
-                    <p class="mt-2 mt-md-5">Long established fact that a reader will be distracted by the readable
+                    <p class="mt-2 mt-md-5 font-16">Long established fact that a reader will be distracted by the
+                        readable
                         content
                         of a page.</p>
                 </div>
@@ -102,9 +58,11 @@
                     established fact that a reader will be distracted by the readable content.
                 </div>
                 <div
-                    class="col-6 col-md-3 mt-3 d-flex flex-column mb-2 align-items-center justify-content-center fw-light">
-                    <h3>4.8/4</h3>
-                    <p class="font-16">Explore our trust<br>score & customer.</p>
+                    class="col-6 col-md-3 mt-3 d-flex flex-column position-relative mb-2 align-items-center justify-content-center fw-light overflow-hidden ">
+                    <img src="./images/hero/cloth.svg" class="position-absolute" alt="">
+                    <h3 class="z-2 position-relative">4.8/4</h3>
+                    <p class="font-16 z-2 position-relative">Explore our trust<br class="d-none d-lg-block" />score &
+                        customer.</p>
                 </div>
             </div>
         </div>
@@ -145,18 +103,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 primary-banner rounded-card-4 row px-4 py-3 mt-4">
-                <div class="col-12 col-md-3 d-flex align-items-center me-2">
+            <div class="col-12 primary-banner rounded-card-4 d-flex flex-column flex-md-row px-4 py-4 mt-4">
+                <div class="d-flex align-items-center me-2">
                     <img src="./images/volunteer/linda.png" alt="" height="50px" class="">
                     <img src="./images/volunteer/john.png" alt="" height="50px" class="overlap-image">
                     <img src="./images/volunteer/jane.png" alt="" height="50px" class="overlap-image">
                     <img src="./images/volunteer/chris.png" alt="" height="50px" class="overlap-image">
 
                 </div>
-                <div class="col-12 col-md-9 row d-flex align-items-center ">
-                    <h4 class="col-12 col-md-9 font-30">Building Bridges of Faith, Reaching<br />Hearts with Love.
+                <div class="row mw-75 align-items-center justify-content-start ">
+                    <h4 class="col-12 col-md-8 font-30 border-md-start border-secondary-subtle ms-md-3 mt-3 mt-md-0">
+                        Building Bridges of Faith, Reaching <br class="d-none d-lg-block" />Hearts with Love.
                     </h4>
-                    <button class="col-12 font-16 col-md-3 custom-button btn btn-dark  px-4 ms-auto py-2">Join
+                    <button class="col-12 font-16 col-md-3 custom-button btn btn-dark px-4 ms-3 ms-md-auto py-3">Join
                         us</button>
                 </div>
             </div>
@@ -167,15 +126,16 @@
         <div class="p-3 p-md-5 row ">
             <div class="col-12 col-md-7 d-flex flex-column justify-content-center ">
                 <h1 class="font-45 fw-semibold border-3 ps-3 border-danger border-start w-100">Faithful
-                    hearts,<br>compassionate
+                    hearts,<br class="d-none d-lg-block" /> compassionate
                     hands
                 </h1>
-                <h5 class="font-16 my-3">A long established fact that a reader will be distracted by the readable
+                <h5 class="font-16 my-3 mw-75">A long established fact that a reader will be distracted by the readable
                     content of a
                     page when
                     looking.</h5>
                 <img src="./images/quote/quote.png" width="150px" class="my-3" alt="">
-                <h5 class="font-16 ">“I love you when you bow in your mosque, kneel in your temple, pray in your church.
+                <h5 class="font-16 mw-75">“I love you when you bow in your mosque, kneel in your temple, pray in your
+                    church.
                     For you and I
                     are sons of one religion, and it is the spirit”“I love you when you bow in your mosque, kneel in
                     your temple.</h5>
@@ -190,10 +150,10 @@
     </section>
 
     <section class="container-md ">
-        <div class="p-3 p-md-5 row">
+        <div class="p-3 p-md-5 row gy-3">
             <div class="col-12 col-md-6 d-flex flex-column justify-content-center ">
                 <img src="./images/potential/church.svg" class="potential-image object-fit-cover rounded-card-4" alt="">
-                <h4 class="fs-6 my-4 potential-image">“I love you when you bow in your mosque, kneel in your temple,
+                <h4 class="font-16 my-4 potential-image">“I love you when you bow in your mosque, kneel in your temple,
                     pray in your
                     church.
                     For you and
@@ -205,8 +165,9 @@
             </div>
             <div class="col-12 order-first order-md-0 col-md-6 d-flex flex-column justify-content-center ">
 
-                <h4 class="fs-1 border-3 ps-3 border-danger border-start">Unleash the potential about us</h4>
-                <h3 class="fs-6 my-4 potential-image">A long established fact that a reader will be distracted by the
+                <h4 class="font-45 text-capitalize roboto-serif mw-85 border-3 ps-3 border-danger border-start">Unleash
+                    the potential about us</h4>
+                <h3 class="font-16 my-4 potential-image">A long established fact that a reader will be distracted by the
                     readable
                     content of
                     a page when looking.A long established fact that a reader will be distracted by the readable
@@ -218,121 +179,20 @@
     </section>
 
     <section class="container-md p-3 p-md-5">
-        <div class="d-flex flex-column flex-md-row justify-content-between heading">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center heading">
         </div>
 
-        <div class="d-flex flex-nowrap gap-2 position-relative mt-4 overflow-x-scroll">
-            <div class="card p-4 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center"
-                style="width: 280px;">
-                <img src="./images/satisfaction/church.svg" width="50px" alt="church">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Our Churches</h5>
-                    <p class="card-text">A long established fact that a reade.</p>
-                    <button
-                        class="fs-small w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span>
-                        <span
-                            class="rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100"><img
-                                src="./images/icons/arrow-right.svg" width="20px" alt=""></span>
-                    </button>
-                </div>
-            </div>
-            <div class="card p-4 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center"
-                style="width: 280px;">
-                <img src="./images/satisfaction/church.svg" width="50px" alt="church">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Our Churches</h5>
-                    <p class="card-text">A long established fact that a reade.</p>
-                    <button
-                        class="fs-small w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span>
-                        <span
-                            class="rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100"><img
-                                src="./images/icons/arrow-right.svg" width="20px" alt=""></span>
-                    </button>
-                </div>
-            </div>
-            <div class="card p-4 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center"
-                style="width: 280px;">
-                <img src="./images/satisfaction/church.svg" width="50px" alt="church">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Our Churches</h5>
-                    <p class="card-text">A long established fact that a reade.</p>
-                    <button
-                        class="fs-small w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span>
-                        <span
-                            class="rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100"><img
-                                src="./images/icons/arrow-right.svg" width="20px" alt=""></span>
-                    </button>
-                </div>
-            </div>
-            <div class="card p-4 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center"
-                style="width: 280px;">
-                <img src="./images/satisfaction/church.svg" width="50px" alt="church">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Our Churches</h5>
-                    <p class="card-text">A long established fact that a reade.</p>
-                    <button
-                        class="fs-small w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span>
-                        <span
-                            class="rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100"><img
-                                src="./images/icons/arrow-right.svg" width="20px" alt=""></span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- <div class="satisfaction-card-wrapper shrine-card-wrapper col-6 col-sm-4 col-md-3 p-2">
-                <div
-                    class="satisfaction-card h-100 w-100 p-2 p-md-3 shrine-card d-flex flex-column gap-3 justify-content-center align-items-center">
-                    <div class="image-container h-25"></div>
-                    <h3 class="fs-large m-0 text-capitalize font-roboto fw-semibold">Our Churches</h3>
-                    <span class="fs-small text-center">A long established fact that a reade.</span>
-                    <button
-                        class="fs-small text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span> <span
-                            class="btn-arrow rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100">&gt;</span>
-                    </button>
-                </div>
-            </div>
-            <div class="satisfaction-card-wrapper shrine-card-wrapper col-6 col-sm-4 col-md-3 p-2">
-                <div
-                    class="satisfaction-card h-100 w-100 p-2 p-md-3 shrine-card d-flex flex-column gap-3 justify-content-center align-items-center">
-                    <div class="image-container h-25"></div>
-                    <h3 class="fs-large m-0 text-capitalize font-roboto fw-semibold">Our Churches</h3>
-                    <span class="fs-small text-center">A long established fact that a reade.</span>
-                    <button
-                        class="fs-small text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span> <span
-                            class="btm-arrow rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100">&gt;</span>
-                    </button>
-                </div>
-            </div>
-            <div class="satisfaction-card-wrapper shrine-card-wrapper col-6 col-sm-4 col-md-3 p-2">
-                <div
-                    class="satisfaction-card h-100 w-100 p-2 p-md-3 shrine-card d-flex flex-column gap-3 justify-content-center align-items-center">
-                    <div class="image-container h-25"></div>
-                    <h3 class="fs-large m-0 text-capitalize font-roboto fw-semibold">Our Churches</h3>
-                    <span class="fs-small text-center">A long established fact that a reade.</span>
-                    <button
-                        class="fs-small text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                        <span class="text-content">read more</span> <span
-                            class="btm-arrow rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100">&gt;</span>
-                    </button>
-                </div>
-            </div> -->
+        <div class="d-flex service-card-container flex-nowrap gap-2 position-relative mt-4 overflow-x-scroll hidden-scrollbar">
+            
         </div>
     </section>
 
     <section class="container-md p-3 p-md-5">
         <div class="d-flex flex-md-row gap-2 flex-column">
             <div class="w-100">
-                <h3 class="fs-1 border-3 ps-3 border-danger border-start text-capitalize">Growing Stronger in<br> God’s
-                    our work</h3>
-                <p class="my-4">A long established fact that a reader will be distracted by the readable content of a
-                    page when
-                    looking.A long established fact that a reader will be distracted by the readable.</p>
+                <div class="heading pb-3">
+
+                </div>
                 <div class="form-check my-2">
                     <input class="form-check-input" checked disabled type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
@@ -357,23 +217,31 @@
         </div>
     </section>
 
-    <section class="container-md p-3 p-md-5">
-        <div class="d-flex flex-column flex-md-row justify-content-between heading">
+    <div class="d-flex justify-content-center ">
+        <img src="./images/illustration/teamcrown.svg" class="illustration illustration-team" alt="">
+    </div>
+
+    <section class="container-md p-3">
+        <div class="d-flex flex-column flex-md-row justify-content-between heading align-items-center">
         </div>
 
         <div class="row gy-5 my-5 justify-content-center team-card-container">
         </div>
 
 
-        <div class="d-flex justify-content-center align-items-center pt-5">
+        <div class="d-flex justify-content-center align-items-center pt-2">
             <button class="btn btn-outline-dark ">ALL TEAM MEMBERS</button>
         </div>
 
+        <div class="d-flex justify-content-center ">
+            <img src="./images/illustration/team.png" class="illustration illustration-team" alt="">
+
+        </div>
 
     </section>
 
-    <section class="container-md p-3 p-md-5">
-        <div class="d-flex flex-column flex-md-row justify-content-between heading">
+    <section class="container-md p-3 pt-0">
+        <div class="d-flex flex-column flex-md-row justify-content-between heading align-items-center">
         </div>
 
         <div class="d-flex gap-2 mt-5 overflow-x-hidden cardContainer">
@@ -390,33 +258,37 @@
 
 
     <section class="container-md p-3 p-md-5">
-        <div class="d-flex flex-column flex-md-row justify-content-between heading mb-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between heading align-items-center mb-5">
         </div>
 
         <div class="row form-subscribe">
             <div class="col-12 col-lg-6 rounded-3 p-3">
-                <div class="featured w-100 h-100 p-5 rounded-card-4 overflow-hidden ">
-                    <div class="p-3 fit-content rounded-card-4 bg-white ">
-                        Featured
-                        <h3>Growing Together in God’s Word</h3>
-                        <h5>A long established fact that a reader will be distracted by the readable content of...</h5>
-                        <h6 class="mt-4">8 march 2023</h6>
+                <div
+                    class="featured w-100 h-100 p-4 d-flex flex-column justify-content-center rounded-card-4 overflow-hidden ">
+                    <div
+                        class="p-3 w-75 h-75 font-16 d-flex flex-column justify-content-center fit-content rounded-card-4 bg-white ">
+                        <span class="text-uppercase ">Featured</span>
+                        <h3 class="fw-semibold font-26">Growing Together in God’s Word</h3>
+                        <h5 class="font-16">A long established fact that a reader will be distracted by the readable
+                            content of...</h5>
+                        <h6 class="mt-4 font-12">8 march 2023</h6>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6 d-flex align-items-center p-3">
 
                 <div class="card h-100 w-100 rounded-card-4 d-flex flex-column justify-content-around px-4 py-5 ">
-                    <h4 class="card-title">
+                    <h4 class="card-title fw-semibold roboto-serif">
                         Subscribe to Church
                     </h4>
-                    <p class="card-title">A long established fact that a reader will be distracted by the readable.A
+                    <p class="card-title font-16 mw-85">A long established fact that a reader will be distracted by the
+                        readable.A
                         long.</p>
                     <input type="text" class="form-control-lg border border-2">
                     <button class="btn fit-content btn-outline-dark px-3 py-2">Subscribe</button>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label font-12" for="flexCheckDefault">
                             I agree that my sub minted data is being<br /> collected and stored
                         </label>
                     </div>
@@ -428,72 +300,11 @@
         </div>
     </section>
 
-    <footer class="footer-section">
-        <div
-            class="container border-secondary border-0 border-bottom border-1 p-3 d-flex flex-column align-items-start align-items-lg-end flex-md-row justify-content-between ">
-            <img src="images/footer/logo.svg" alt="logo">
-            <p class="font-10 mt-3 font-mysecondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br
-                    class="d-none d-md-block" /> eiusmod tempor incididunt</p>
-        </div>
+    <div class="d-flex justify-content-center ">
+        <img src="./images/illustration/eros.svg" class="illustration illustration-team" alt="">
+    </div>
 
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-12 col-lg-8">
-                    <div class="row mx-auto">
-                        <div class="col-4">
-                            <h3 class="f2-bold font-10 text-white">Quick Links</h3>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Features</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Pricing</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Case Study</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Reviews</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Updates</h4>
-                        </div>
-                        <div class="col-4">
-                            <h3 class="f2-bold font-10 text-white">Company</h3>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">About</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Contact Us</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Careers</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Culture</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Blog</h4>
-                        </div>
-                        <div class="col-4">
-                            <h3 class="f2-bold font-10 text-white">Support</h3>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Getting Started</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Pricing</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Help Center</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Server Status</h4>
-                            <h4 role="button" class="my-4 font-10 font-tertiary">Report a bug</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 mt-5 mt-lg-0 d-flex flex-column align-items-center align-items-md-start ">
-                    <h3 class="f2-bold font-10 text-white">Subscribe to our news Letter</h3>
-                    <h4 class="my-4 font-10 font-tertiary">Lorem ipsum dolor sit amet consectetur adipiscing elit
-                        aliquam.</h4>
-                    <input type="email" placeholder="Enter your email"
-                        class="bg-input border border-0 p-2 px-3 rounded rounded-3 focus-ring text-white "
-                        style="--bs-focus-ring-color: rgba(var(--bs-success-rgb), 0)">
-                    <button
-                        class="bg-primary-red border border-0 px-3 py-2 my-4 rounded rounded-3 text-white hover-icon">Subscribe</button>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="container border-secondary border-0 border-top border-1 mt-4 p-2 d-flex flex-column flex-md-row justify-content-between align-items-center ">
-            <p class="my-4 font-10 font-tertiary">Copyright &#169; 2022 Shrine | All Rights Reserved </p>
-            <div class="d-flex gap-3 mb-5 mb-md-0">
-                <img role="button" src="images/footer/instagram.svg" alt="instagram" class="hover-icon">
-                <img role="button" src="images/footer/twitter.svg" alt="twitter" class="hover-icon">
-                <img role="button" src="images/footer/whatsapp.svg" alt="whatsapp" class="hover-icon">
-                <img role="button" src="images/footer/youtube.svg" alt="youtube" class="hover-icon">
-                <img role="button" src="images/footer/facebook.svg" alt="facebook" class="hover-icon">
-            </div>
-        </div>
-
-    </footer>
-
-
+    <footer class="footer-section"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

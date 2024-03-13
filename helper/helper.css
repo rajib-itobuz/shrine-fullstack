@@ -10,6 +10,10 @@
   font-family: "Playfair";
   src: url(/fonts/playfair.ttf);
 }
+.illustration {
+  display: none;
+}
+
 .resp-container {
   width: 100%;
   max-width: 1000px;
@@ -17,6 +21,14 @@
 
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.bg-input {
+  background-color: #2f3032;
+}
+
+.bg-primary-red {
+  background-color: #c0304f !important;
 }
 
 .rounded-card-4 {
@@ -56,8 +68,12 @@
   height: 50%;
 }
 
-.mw-75 {
+.mw-75, .mw-85 {
   width: 100%;
+}
+
+.font-12 {
+  font-size: 0.6rem;
 }
 
 .font-16 {
@@ -117,14 +133,29 @@
 }
 
 @media screen and (min-width: 768px) {
+  .illustration {
+    display: unset;
+  }
   .mw-75 {
-    width: 65%;
+    width: 75%;
+  }
+  .border-md-start {
+    border-left: 1px solid;
+  }
+  .mw-85 {
+    width: 85%;
+  }
+  .font-12 {
+    font-size: 0.7rem;
   }
   .font-16 {
     font-size: 0.8rem;
   }
   .font-20 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+  .font-26 {
+    font-size: 1.2rem;
   }
   .font-45 {
     font-size: 2rem;

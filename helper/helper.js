@@ -1,10 +1,10 @@
-const cart = document.querySelector(".cart");
 
 const cartItemCount = () => {
     return 2;
 }
 
 export const cartWidget = () => {
+    const cart = document.querySelector(".cart");
     const cartIconWrapper = document.createElement("a");
     cartIconWrapper.setAttribute("class", "position-relative");
 
@@ -24,33 +24,263 @@ export const cartWidget = () => {
 
 }
 
-export const createHeading = (headingElement, headingObject) => {
+export const navBar = (navbarBgClass) => {
+    const navBar = document.querySelector(".navbar");
+
+    const navbarBrandWrapper = document.createElement('DIV');
+    navbarBrandWrapper.setAttribute('class', 'container');
+
+    const navbarBrand = document.createElement('A');
+    navbarBrand.setAttribute('class', 'navbar-brand d-flex align-items-center d-lg-none navbar-logo-2');
+    navbarBrand.setAttribute('href', '#');
+    navbarBrandWrapper.appendChild(navbarBrand);
+
+    const navbarLogoMin = document.createElement('IMG');
+    navbarLogoMin.setAttribute('src', '/images/navbar/logo-min.svg');
+    navbarLogoMin.setAttribute('alt', 'logo');
+    navbarLogoMin.setAttribute('height', '50px');
+    navbarBrand.appendChild(navbarLogoMin);
+
+    const navbarLogoText = document.createElement('H3');
+    navbarLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2');
+    navbarBrand.appendChild(navbarLogoText);
+    navbarBrand.textContent = "SHRINE"
+
+    const navbarToggle = document.createElement('BUTTON');
+    navbarToggle.setAttribute('class', 'navbar-toggler');
+    navbarToggle.setAttribute('type', 'button');
+    navbarToggle.setAttribute('data-bs-toggle', 'collapse');
+    navbarToggle.setAttribute('data-bs-target', '#navbarSupportedContent');
+    navbarToggle.setAttribute('aria-controls', 'navbarSupportedContent');
+    navbarToggle.setAttribute('aria-expanded', 'false');
+    navbarToggle.setAttribute('aria-label', 'Toggle navigation');
+    navbarBrandWrapper.appendChild(navbarToggle);
+
+    const navbarToggleIcon = document.createElement('SPAN');
+    navbarToggleIcon.setAttribute('class', 'navbar-toggler-icon');
+    navbarToggle.appendChild(navbarToggleIcon);
+
+    const navbarLinksWrapper = document.createElement('DIV');
+    navbarLinksWrapper.setAttribute('class', 'collapse navbar-collapse me-lg-5');
+    navbarLinksWrapper.setAttribute('id', 'navbarSupportedContent');
+    navbarBrandWrapper.appendChild(navbarLinksWrapper);
+
+    const navbarNav = document.createElement('UL');
+    navbarNav.setAttribute('class', 'navbar-nav mx-auto gap-4 mb-2 mb-lg-0  d-flex align-items-center justify-content-center');
+    navbarLinksWrapper.appendChild(navbarNav);
+
+    const createNavItem = (linkName) => {
+        const navItem = document.createElement('LI');
+        navItem.setAttribute('class', 'nav-item');
+
+        const navItemAnchor = document.createElement('A');
+        navItemAnchor.setAttribute('class', 'nav-link position-relative hover-link');
+        navItemAnchor.setAttribute('aria-current', 'page');
+        navItemAnchor.setAttribute('href', '#');
+        navItemAnchor.append(linkName);
+
+        navItem.append(navItemAnchor);
+        return navItem;
+    }
+
+    const homeNavItem = createNavItem("Home");
+    const pagesNavItem = createNavItem("Pages");
+    const blogNavItem = createNavItem("Blog");
+    const donationNavItem = createNavItem("Donation");
+
+
+    const navbarLgLogo = document.createElement('A');
+    navbarLgLogo.setAttribute('class', `navbar-brand ${navbarBgClass} mx-3 position-relative navbar-logo d-none d-lg-inline-flex  align-items-center fit-content px-4`);
+    navbarLgLogo.setAttribute('href', '#');
+
+
+    navbarLgLogo.appendChild(navbarLogoMin);
+
+    const navbarLgLogoText = document.createElement('H3');
+    navbarLgLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-3');
+    navbarLgLogoText.innerText = "SHRINE";
+    navbarLgLogo.appendChild(navbarLgLogoText);
+
+    const shopNavItem = createNavItem("Shop");
+    const contactNavItem = createNavItem("Contacts");
+
+    const searchIcon = document.createElement('IMG');
+    searchIcon.setAttribute('src', '/images/navbar/search.svg');
+    searchIcon.setAttribute('alt', 'search');
+
+    const searchNavItem = createNavItem(searchIcon);
+
+
+    const cartNavItem = document.createElement('LI');
+    cartNavItem.setAttribute('class', 'nav-item cart');
+    navbarNav.appendChild(cartNavItem);
+
+    navbarNav.append(homeNavItem, pagesNavItem, blogNavItem, donationNavItem, navbarLgLogo, shopNavItem, contactNavItem, searchNavItem, cartNavItem);
+
+    navBar.appendChild(navbarBrandWrapper);
+}
+
+export const footer = (footerClass) => {
+    const footer = document.querySelector(".footer-section");
+
+    const footerLogoWrapper = document.createElement('DIV');
+    footerLogoWrapper.setAttribute('class', 'container border-secondary border-0 border-bottom border-1 p-3 d-flex flex-column align-items-start align-items-lg-end flex-md-row justify-content-between ');
+
+    const footerLogo = document.createElement('IMG');
+    footerLogo.setAttribute('src', '/images/footer/logo.svg');
+    footerLogo.setAttribute('alt', 'logo');
+    footerLogoWrapper.appendChild(footerLogo);
+
+    const footerText = document.createElement('P');
+    footerText.setAttribute('class', 'font-10 mt-3 font-mysecondary');
+    footerText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br> eiusmod tempor incididunt";
+    footerLogoWrapper.appendChild(footerText);
+
+    const footerContainer = document.createElement('DIV');
+    footerContainer.setAttribute('class', 'container');
+
+    const footerContentWrapper = document.createElement('DIV');
+    footerContentWrapper.setAttribute('class', 'row mt-5');
+    footerContainer.appendChild(footerContentWrapper);
+
+    const footerLinksWrapper = document.createElement('DIV');
+    footerLinksWrapper.setAttribute('class', 'col-12 col-lg-8');
+    footerContentWrapper.appendChild(footerLinksWrapper);
+
+    const footerColumnWrapper = document.createElement('DIV');
+    footerColumnWrapper.setAttribute('class', 'row mx-auto');
+    footerLinksWrapper.appendChild(footerColumnWrapper);
+
+    const createFooterLinkHeader = (headerName) => {
+        const linkHeader = document.createElement('H3');
+        linkHeader.setAttribute('class', 'fw-bold font-20 text-white');
+        linkHeader.innerHTML = headerName;
+        return linkHeader
+
+    }
+
+    const createFooterLinkItem = (linkName) => {
+        const link = document.createElement('H3');
+        link.setAttribute('class', 'my-4 font-16 font-tertiary');
+        link.setAttribute('role', 'button');
+        link.innerHTML = linkName;
+        return link
+
+    }
+
+
+    const quickLinks = document.createElement('DIV');
+    quickLinks.setAttribute('class', 'col-4');
+    quickLinks.appendChild(createFooterLinkHeader("Quick Links"));
+    quickLinks.appendChild(createFooterLinkItem("Features"));
+    quickLinks.appendChild(createFooterLinkItem("Pricing"));
+    quickLinks.appendChild(createFooterLinkItem("Case Study"));
+    quickLinks.appendChild(createFooterLinkItem("Reviews"));
+    quickLinks.appendChild(createFooterLinkItem("Updates"));
+    footerColumnWrapper.appendChild(quickLinks);
+
+    const companyLinks = document.createElement('DIV');
+    companyLinks.setAttribute('class', 'col-4');
+    companyLinks.appendChild(createFooterLinkHeader("Company"));
+    companyLinks.appendChild(createFooterLinkItem("About"));
+    companyLinks.appendChild(createFooterLinkItem("Pricing"));
+    companyLinks.appendChild(createFooterLinkItem("Case Study"));
+    companyLinks.appendChild(createFooterLinkItem("Reviews"));
+    companyLinks.appendChild(createFooterLinkItem("Updates"));
+    footerColumnWrapper.appendChild(companyLinks);
+
+    const supportLinks = document.createElement('DIV');
+    supportLinks.setAttribute('class', 'col-4');
+    supportLinks.appendChild(createFooterLinkHeader("Company"));
+    supportLinks.appendChild(createFooterLinkItem("About"));
+    supportLinks.appendChild(createFooterLinkItem("Pricing"));
+    supportLinks.appendChild(createFooterLinkItem("Case Study"));
+    supportLinks.appendChild(createFooterLinkItem("Reviews"));
+    supportLinks.appendChild(createFooterLinkItem("Updates"));
+    footerColumnWrapper.appendChild(supportLinks);
+
+    const newsletterWrapper = document.createElement('DIV');
+    newsletterWrapper.setAttribute('class', 'col-12 col-lg-4 mt-5 mt-lg-0 d-flex flex-column align-items-center align-items-md-start ');
+    footerContentWrapper.appendChild(newsletterWrapper);
+
+    const newsLetterHeading = document.createElement('H3');
+    newsLetterHeading.setAttribute('class', 'f2-bold font-20 text-white');
+    newsLetterHeading.innerText="Subscribe to our news Letter";
+    newsletterWrapper.appendChild(newsLetterHeading);
+
+    const newsletterSubTitle = document.createElement('H4');
+    newsletterSubTitle.setAttribute('class', 'my-4 font-16 font-tertiary');
+    newsletterSubTitle.innerText="Lorem ipsum dolor sit amet consectetur adipiscing elit\\n aliquam.";
+    newsletterWrapper.appendChild(newsletterSubTitle);
+
+    const subscribeEmailInput = document.createElement('INPUT');
+    subscribeEmailInput.setAttribute('type', 'email');
+    subscribeEmailInput.setAttribute('placeholder', 'Enter your email');
+    subscribeEmailInput.setAttribute('class', 'bg-input border border-0 p-2 px-3 rounded rounded-3 focus-ring text-white ');
+    subscribeEmailInput.setAttribute('style', '--bs-focus-ring-color: rgba(const(--bs-success-rgb), 0)');
+    newsletterWrapper.appendChild(subscribeEmailInput);
+
+    const subscribeButton = document.createElement('BUTTON');
+    subscribeButton.setAttribute('class', 'bg-primary-red border border-0 px-3 py-2 my-4 rounded rounded-3 text-white hover-icon');
+    subscribeButton.innerText="Subscribe";
+    newsletterWrapper.appendChild(subscribeButton);
+
+    const footerCopyright = document.createElement('DIV');
+    footerCopyright.setAttribute('class', 'container border-secondary border-0 border-top border-1 mt-4 p-2 d-flex flex-column flex-md-row justify-content-between align-items-center ');
+
+    const copyrightText = document.createElement('P');
+    copyrightText.setAttribute('class', 'my-4 font-10 font-tertiary');
+    copyrightText.innerHTML="Copyright &#169; 2022 Shrine | All Rights Reserved";
+    footerCopyright.appendChild(copyrightText);
+
+    const footerIconsWrapper = document.createElement('DIV');
+    footerIconsWrapper.setAttribute('class', 'd-flex gap-3 mb-5 mb-md-0');
+    footerCopyright.appendChild(footerIconsWrapper);
+
+    const createFooterIcon=(iconName,iconUrl)=>{
+        const footerIcon = document.createElement('IMG');
+        footerIcon.setAttribute('role', 'button');
+        footerIcon.setAttribute('src', iconUrl);
+        footerIcon.setAttribute('alt', iconName);
+        footerIcon.setAttribute('class', 'hover-icon');
+
+        return footerIcon
+    }
+
+    
+    footerIconsWrapper.appendChild(createFooterIcon('instagram','/images/footer/instagram.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('twitter','/images/footer/twitter.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('whatsapp','/images/footer/whatsapp.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('youtube','/images/footer/youtube.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('facebook','/images/footer/facebook.svg'));
+
+    
+    footer.append(footerLogoWrapper,footerContainer,footerCopyright);
+}
+
+export const createHeading = (headingElement, title, subtitle,spacing=false) => {
     const heading = document.createElement("h4");
-    heading.setAttribute("class", "fs-1 my-3 border-3 ps-3 border-danger border-start w-100");
-    heading.innerHTML = headingObject.heading;
+    heading.setAttribute("class", `font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing?'my-4':''}`);
+    heading.innerHTML = title;
 
 
     const subHeading = document.createElement("h5");
-    subHeading.setAttribute("class", "fs-6 mw-75");
-
-    subHeading.innerText = headingObject.subHeading;
+    subHeading.setAttribute("class", `font-16 mw-75 ${spacing?'pt-2':''}`);
+    subHeading.innerText = subtitle;
 
     headingElement.append(heading, subHeading);
 }
-
 
 export const createEventCard = ({ imgUrl, title, subtitle, button, date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const card = document.createElement("div");
     card.setAttribute("class", `card mb-3 flex-shrink-0 ${cardCustomClass}`);
 
-
-
     const rowWrapper = document.createElement("div");
     rowWrapper.setAttribute("class", "row g-0");
 
     const imageWrapper = document.createElement("div");
-    imageWrapper.setAttribute("class", "col-12 col-sm-5");
+    imageWrapper.setAttribute("class", "col-12 col-sm-4");
 
 
     const image = document.createElement("img");
@@ -60,41 +290,44 @@ export const createEventCard = ({ imgUrl, title, subtitle, button, date, locatio
 
 
     const cardBodyWrapper = document.createElement("div");
-    cardBodyWrapper.setAttribute("class", "col-12 col-sm-7");
+    cardBodyWrapper.setAttribute("class", "col-12 col-sm-8 d-flex align-items-center");
 
     const cardBody = document.createElement("div");
     cardBody.setAttribute("class", `card-body ${bodyCustomClass}`);
 
     if (date) {
         const dateElement = document.createElement("h6");
+        dateElement.setAttribute("class", "font-16 fw-light")
         dateElement.textContent = date;
         cardBody.append(dateElement);
     }
     if (location) {
         const locationElement = document.createElement("h6");
+        locationElement.setAttribute("class", "font-16 fw-light")
         locationElement.textContent = location;
         cardBody.append(locationElement);
     }
     if (time) {
         const timeElement = document.createElement("h6");
+        timeElement.setAttribute("class", "font-16 fw-light")
         timeElement.textContent = time;
         cardBody.append(timeElement);
     }
 
     const cardTitle = document.createElement("h5");
+    cardTitle.setAttribute("class", "card-title mt-3 roboto-serif fw-bold font-26");
     cardTitle.innerHTML = title;
-    cardTitle.setAttribute("class", "card-title");
 
     const cardText = document.createElement("p");
     cardText.innerHTML = subtitle;
-    cardText.setAttribute("class", "card-text");
+    cardText.setAttribute("class", "card-text mb-4 fw-light font-16");
     cardBody.append(cardTitle, cardText);
 
 
     if (button) {
         const buttonElement = document.createElement("button");
         buttonElement.textContent = button;
-        buttonElement.setAttribute("class", "btn btn-outline-dark")
+        buttonElement.setAttribute("class", "btn btn-dark")
         cardBody.append(buttonElement);
     }
 
@@ -123,12 +356,12 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
     cardBody.setAttribute('class', 'card-body');
 
     const cardTitle = document.createElement('h5');
-    cardTitle.setAttribute('class', 'card-title');
+    cardTitle.setAttribute('class', 'card-title font-26 fw-semibold');
     cardTitle.innerHTML = title;
 
 
     const cardText = document.createElement('p');
-    cardText.setAttribute('class', 'card-text py-3');
+    cardText.setAttribute('class', 'card-text py-1 font-16');
     cardText.innerHTML = subtitle;
 
 
@@ -142,7 +375,7 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
     const readTimeText = document.createElement("p");
     readTimeText.textContent = readTime;
-    readTimeText.setAttribute("class", "m-0")
+    readTimeText.setAttribute("class", "m-0 font-12")
 
 
     userDiv.append(userImg, readTimeText);
@@ -154,7 +387,53 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
 }
 
-export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => { }
+export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+    const divWrapper = document.createElement("div");
+    divWrapper.setAttribute("class", "card p-3 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center");
+    divWrapper.setAttribute("style", "max-width:250px");
+
+    const imgWrapper = document.createElement("img");
+    imgWrapper.setAttribute("alt", title);
+    imgWrapper.setAttribute("src", imgUrl);
+    imgWrapper.setAttribute("width", "50px");
+
+
+    const cardBody = document.createElement("div");
+    cardBody.setAttribute("class", "card-body text-center fit-content");
+
+    const cardTitle = document.createElement("h4");
+    cardTitle.setAttribute("class", "card-title font-26 fw-semibold");
+    cardTitle.innerHTML = title;
+
+
+    const subTitle = document.createElement("p");
+    subTitle.setAttribute("class", "card-text font-16 fw-light");
+    subTitle.innerHTML = subtitle;
+
+    const buttonElement = document.createElement("button");
+    buttonElement.setAttribute("class", "font-16 w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2");
+
+    const readMoreSpan = document.createElement("span");
+    readMoreSpan.setAttribute("class", "text-content");
+    readMoreSpan.innerText = "Read More";
+
+    const nextIconSpan = document.createElement("span");
+    nextIconSpan.setAttribute("class", "rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100");
+
+    const nextIcon = document.createElement("img");
+    nextIcon.src = "/images/icons/arrow-right.svg";
+    nextIcon.alt = "next-icon";
+    nextIcon.width = "20px";
+
+
+    nextIconSpan.appendChild(nextIcon);
+    buttonElement.append(readMoreSpan, nextIconSpan);
+    cardBody.append(cardTitle, subTitle, buttonElement);
+    divWrapper.append(imgWrapper, cardBody);
+
+    return divWrapper;
+
+}
 
 export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
@@ -179,16 +458,17 @@ export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', b
 
 
     const shareIcon = document.createElement('img');
-    shareIcon.src = './images/team/share.svg';
+    shareIcon.src = '/images/team/share.svg';
     shareIcon.alt = 'share-icon';
 
     const nameWrapper = document.createElement('div');
 
     const name = document.createElement('h4');
-    name.setAttribute('class', 'fw-bold fs-5');
+    name.setAttribute('class', 'fw-bold font-26');
     name.textContent = title;
 
     const subTitle = document.createElement('h6');
+    subTitle.setAttribute('class', 'fw-light font-16');
     subTitle.textContent = subtitle;
 
     nameWrapper.append(name, subTitle);
@@ -199,7 +479,6 @@ export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', b
 
     return teamWrapper;
 }
-
 
 export const createAccordion = ({ title, subtitle, index }) => {
 

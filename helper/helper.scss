@@ -17,6 +17,12 @@
 $bg-primary-red: #c0304f;
 $font-tertiary: #929292;
 $hero-primary-bg: #F6F2EB;
+$bg-primrary-red: #c0304f;
+$input-background: #2f3032;
+
+.illustration{
+    display: none;
+}
 
 .resp-container {
     width: 100%;
@@ -25,6 +31,14 @@ $hero-primary-bg: #F6F2EB;
 
 .hidden-scrollbar::-webkit-scrollbar {
     display: none;
+}
+
+.bg-input {
+    background-color: $input-background;
+}
+
+.bg-primary-red {
+    background-color: $bg-primrary-red !important;
 }
 
 .rounded-card-4 {
@@ -62,8 +76,12 @@ $hero-primary-bg: #F6F2EB;
     height: 50%;
 }
 
-.mw-75 {
+.mw-75,.mw-85 {
     width: 100%;
+}
+
+.font-12 {
+    font-size: 0.6rem;
 }
 
 .font-16 {
@@ -126,16 +144,37 @@ $hero-primary-bg: #F6F2EB;
 
 
 @media screen and (min-width:768px) {
+
+    .illustration{
+        display: unset;
+    }
+
     .mw-75 {
-        width: 65%;
+        width: 75%;
+    }
+
+    .border-md-start{
+        border-left: 1px solid;
+    }
+
+    .mw-85 {
+        width: 85%;
+    }
+
+    .font-12 {
+        font-size: 0.7rem;
     }
 
     .font-16 {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
 
     .font-20 {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .font-26 {
+        font-size: 1.2rem;
     }
 
     .font-45 {

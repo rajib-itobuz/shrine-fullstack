@@ -133,6 +133,10 @@ input[type="checkbox"]:checked {
     background-color: #000;
 }
 
+// input:not([type="checkbox"]){
+//     background-color: rgba(0, 0, 0, 0.1);
+// }
+
 
 .slider-container {
     &::-webkit-scrollbar {
@@ -148,6 +152,10 @@ input[type="checkbox"]:checked {
         width: 2.5rem;
         background: linear-gradient(to left, #fff 35%, #fff0 110%);
     }
+}
+
+.illustration-team{
+    max-width: 500px;
 }
 
 @media screen and (min-width:400px) {
