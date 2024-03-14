@@ -19,6 +19,10 @@
   max-width: 1000px;
 }
 
+.mission-card-bg {
+  background-color: #FFE6E0;
+}
+
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -31,7 +35,7 @@
   background-color: #2f3032;
 }
 
-.bg-primary-red, .active {
+.bg-primary-red {
   background-color: #c0304f !important;
 }
 
@@ -138,6 +142,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .w-md-50 {
+    width: 50%;
+  }
   .illustration {
     display: unset;
   }

@@ -29,6 +29,10 @@ $input-background: #2f3032;
     max-width: 1000px;
 }
 
+.mission-card-bg {
+    background-color: #FFE6E0;
+}
+
 .hidden-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -43,10 +47,6 @@ $input-background: #2f3032;
 
 .bg-primary-red {
     background-color: $bg-primrary-red !important;
-}
-
-.active {
-    @extend .bg-primary-red;
 }
 
 .rounded-card-4 {
@@ -153,6 +153,10 @@ $input-background: #2f3032;
 
 
 @media screen and (min-width:768px) {
+
+    .w-md-50 {
+        width: 50%;
+    }
 
     .illustration {
         display: unset;

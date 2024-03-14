@@ -166,25 +166,22 @@
     <section class="container-lg">
         <div class="p-3 p-md-5 row">
             <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
-                <h1 class="font-45 text-capitalize roboto-serif mw-85 border-3 ps-3 border-danger border-start">
+                <!-- <h1 class="font-45 text-capitalize roboto-serif mw-85 border-3 ps-3 border-danger border-start">
                     Faithful hearts,<br class="d-none d-lg-block" />
                     compassionate hands
                 </h1>
                 <h5 class="font-16 my-3 mw-75">
                     A long established fact that a reader will be distracted by the
                     readable content of a page when looking.
-                </h5>
-                <img src="http://localhost:3000/images/quote/quote.png" width="150px" class="my-3" alt="" />
-                <h5 class="font-16 mw-75">
-                    “I love you when you bow in your mosque, kneel in your temple, pray
-                    in your church. For you and I are sons of one religion, and it is
-                    the spirit”“I love you when you bow in your mosque, kneel in your
-                    temple.
-                </h5>
+                </h5> -->
+                <div id="quoteHeading">
 
-                <h3>
-                    <img src="http://localhost:3000/images/quote/quotemarks.svg" class="me-2" alt="" />Martin Luther
-                </h3>
+                </div>
+                <img src="http://localhost:3000/images/quote/quote.png" width="150px" class="my-3" alt="" />
+                <div class="quote-card-container">
+
+                </div>
+
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center">
                 <img src="http://localhost:3000/images/quote/book.svg"
@@ -241,7 +238,15 @@
             <div class="col-12 col-sm-8 bg-purple">
                 <div class="row g-2 g-sm-0">
                     <div class="col-12">
-                        <div class="pb-3" id="growingHeading"></div>
+                        <div class="pb-3" id="growingHeading">
+                            <h4
+                                class="font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 my-4">
+                                Growing Stronger in<br class="d-none d-lg-block" /> God's our work</h4>
+                            <h5 class="font-16 mw-75 pt-2">A long established fact that a reader will be distracted by
+                                the
+                                readable content of a
+                                page when looking.A long established fact that.A long.</h5>
+                        </div>
                         <div class="form-check my-2">
                             <input class="form-check-input" checked disabled type="checkbox" value=""
                                 id="flexCheckDefault" />
@@ -348,12 +353,18 @@
                         A long established fact that a reader will be distracted by the
                         readable.A long.
                     </p>
-                    <input type="text" class="form-control-lg border border-2" />
-                    <button class="btn fit-content btn-outline-dark px-3 py-2">
-                        Subscribe
-                    </button>
+                    <input type="text" id="emailSubscribe" class="form-control-lg border border-2" />
+                    <div class="d-flex gap-3 align-items-center">
+                        <button id="emailSubscribeBtn" class="btn fit-content btn-outline-dark px-3 py-2">
+                            Subscribe
+                        </button>
+                        <p id="subscribeError" class=" font-16">
+
+                        </p>
+                    </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input id="emailSubscribeCheckbtn" class="form-check-input" type="checkbox" value=""
+                            id="flexCheckDefault" />
                         <label class="form-check-label font-12" for="flexCheckDefault">
                             I agree that my sub minted data is being<br />
                             collected and stored

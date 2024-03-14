@@ -267,20 +267,20 @@ export const footer = (footerClass) => {
     footer.append(footerLogoWrapper, footerContainer, footerCopyright);
 }
 
-export const createHeading = (headingElement, title, subtitle, spacing = false) => {
+export const createHeading = (headingElement, title, subtitle, spacing = false, customClassSubt = "") => {
     const heading = document.createElement("h4");
-    heading.setAttribute("class", `font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing ? 'my-4' : ''}`);
+    heading.setAttribute("class", `text-wrap font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing ? 'my-4' : ''}`);
     heading.innerHTML = title;
 
 
     const subHeading = document.createElement("h5");
-    subHeading.setAttribute("class", `font-16 mw-75 ${spacing ? 'pt-2' : ''}`);
-    subHeading.innerText = subtitle;
+    subHeading.setAttribute("class", `font-16 mw-75 ${spacing ? 'pt-2' : ''} ${customClassSubt}`);
+    subHeading.innerHTML = subtitle;
 
     headingElement.append(heading, subHeading);
 }
 
-export const createEventCard = ({ imgUrl, title, subtitle, button, date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createEventCard = ({ imgUrl, title, description: subtitle, button = "See more", date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const card = document.createElement("div");
     card.setAttribute("class", `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}`);
@@ -350,7 +350,7 @@ export const createEventCard = ({ imgUrl, title, subtitle, button, date, locatio
 
 }
 
-export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createBlogCard = ({ imageUrl: imgUrl, title, description: subtitle, authorImgUrl: userImgUrl, readTime = "2min read", imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const cardWrapper = document.createElement('div');
     cardWrapper.setAttribute('class', 'card flex-shrink-0 position-relative z-1');
@@ -396,9 +396,9 @@ export const createBlogCard = ({ imgUrl, title, subtitle, userImgUrl, readTime, 
 
 }
 
-export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = 'rounded-0 rounded-top-5 rounded-end-5' }) => {
     const divWrapper = document.createElement("div");
-    divWrapper.setAttribute("class", "card p-3 hover-card border border-0 flex-shrink-0 rounded-0 rounded-top-5 rounded-end-5 d-flex flex-column align-items-center");
+    divWrapper.setAttribute("class", `card p-3 hover-card border border-0 flex-shrink-0 d-flex flex-column align-items-center ${cardCustomClass}`);
     divWrapper.setAttribute("style", "max-width:250px");
     divWrapper.setAttribute("role", "button");
 
@@ -445,7 +445,7 @@ export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = ''
 
 }
 
-export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createTeamCard = ({ imageUrl, name: title, penName: subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const teamWrapper = document.createElement('div');
     teamWrapper.setAttribute('class', 'col-6 col-sm-4 col-md-3 d-flex justify-content-center');
@@ -455,7 +455,7 @@ export const createTeamCard = ({ imgUrl, title, subtitle, imgCustomClass = '', b
 
 
     const imgElement = document.createElement('img');
-    imgElement.src = backendUrl + imgUrl;
+    imgElement.src = backendUrl + imageUrl;
     imgElement.setAttribute('class', `rounded-pill ${imgCustomClass}`);
     imgElement.alt = title;
 
@@ -520,5 +520,37 @@ export const createAccordion = ({ title, subtitle, index }) => {
 
 
     return accordionWrapper;
+
+}
+
+export const pagingBreadcrumb = (pathElement, url) => {
+
+    pathElement.setAttribute("class", "d-flex justify-content-center my-3");
+    pathElement.setAttribute("style", "--bs-breadcrumb-divider: '>';");
+
+    const breadcrumbList = document.createElement("ol");
+    breadcrumbList.setAttribute("class", "breadcrumb m-0 font-16");
+
+
+    url.forEach((urlItem, index) => {
+        if (urlItem) {
+            const item = document.createElement("li");
+            item.classList.add("breadcrumb-item");
+
+            if (index > 0) {
+                item.classList.add("fw-bold");
+            }
+
+            const link = document.createElement("a");
+            link.setAttribute("class", "text-decoration-none font-12 text-black text-uppercase")
+            link.href = "#";
+            link.innerText = urlItem;
+
+            item.append(link);
+            breadcrumbList.append(item);
+        }
+    })
+
+    pathElement.append(breadcrumbList);
 
 }
