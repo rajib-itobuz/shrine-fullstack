@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "Glitten All Caps";
+  src: url(/fonts/glitten.otf);
+}
+@font-face {
+  font-family: "Roboto Serif";
+  src: url(/fonts/roboto.ttf);
+}
+@font-face {
+  font-family: "Playfair";
+  src: url(/fonts/playfair.ttf);
+}
+.illustration {
+  display: none;
+}
+
+.resp-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.mission-card-bg {
+  background-color: #FFE6E0;
+}
+
+.tertiary-text {
+  color: #FFE6E0;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hover-card:hover {
+  background: #FFE6E0 !important;
+}
+
+.bg-input {
+  background-color: #2f3032;
+}
+
+.bg-primary-red {
+  background-color: #c0304f !important;
+}
+
+input[type=checkbox] {
+  --bs-form-check-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none'%20stroke='%23000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='3'%20d='m6%2010%203%203%206-6'/></svg>") !important;
+  background-color: white !important;
+  border-color: gray !important;
+}
+
+.rounded-card-4 {
+  border-radius: 15px;
+}
+
+.hero-primary {
+  background-color: #F6F2EB;
+}
+
+.fit-content {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.glitten-all-caps {
+  font-family: "Glitten All Caps", serif;
+}
+
+.roboto-serif {
+  font-family: "Roboto Serif", serif;
+}
+
+.playfair {
+  font-family: "Playfair", serif;
+}
+
+.font-tertiary {
+  color: #929292 !important;
+}
+
+.verticalSpacer {
+  width: 2px;
+  background-color: rgba(186, 167, 163, 0.5);
+  height: 50%;
+}
+
+.mw-75,
+.mw-85 {
+  width: 100%;
+}
+
+.font-12 {
+  font-size: 0.6rem;
+}
+
+.font-16 {
+  font-size: 0.7rem;
+}
+
+.font-20 {
+  font-size: 0.8rem;
+}
+
+.font-26 {
+  font-size: 1rem;
+}
+
+.font-30 {
+  font-size: 1.2rem;
+}
+
+.font-45 {
+  font-size: 2rem;
+}
+
+.navbar-logo {
+  translate: 0% 30%;
+}
+
+.navbar-item:hover .nav-link::before {
+  content: "";
+  position: absolute !important;
+  left: 0px;
+  bottom: 0px;
+  width: 75%;
+  background: #c0304f;
+  height: 2px;
+}
+
+.navbar-item:hover .nav-link::after {
+  content: "";
+  position: absolute !important;
+  right: 0px;
+  bottom: 0px;
+  width: 20%;
+  background: #c0304f;
+  height: 2px;
+}
+
+.illustration-footer {
+  bottom: -50px;
+  right: 0px;
+  transform: translate(0%);
+}
+
+.footer-section {
+  background: url(http://localhost:3000/images/footer/footer.png) no-repeat;
+  background-position: 100% 50%;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .service-card {
+    max-width: 280px;
+  }
+  .w-md-50 {
+    width: 50%;
+  }
+  .illustration {
+    display: unset;
+  }
+  .mw-75 {
+    width: 75%;
+  }
+  .border-md-start {
+    border-left: 1px solid;
+  }
+  .mw-85 {
+    width: 85%;
+  }
+  .font-12 {
+    font-size: 0.7rem;
+  }
+  .font-16 {
+    font-size: 1rem;
+  }
+  .font-20 {
+    font-size: 1.1rem;
+  }
+  .font-26 {
+    font-size: 1.5rem;
+  }
+  .font-45 {
+    font-size: 2rem;
+  }
+  .overlay-white {
+    position: relative;
+  }
+  .overlay-white:before {
+    width: 20%;
+    height: 100%;
+    z-index: 2;
+    content: "";
+    position: absolute;
+    background: linear-gradient(to left, #fff 10%, rgba(0, 0, 0, 0));
+    top: 0%;
+    right: 0%;
+  }
+}
+body .nav-underline {
+  --bs-nav-underline-link-active-color: #c0304f !important;
+  --bs-nav-link-color: #747A82 !important;
+  --bs-nav-link-hover-color: #2c3139;
+}/*# sourceMappingURL=style.css.map */

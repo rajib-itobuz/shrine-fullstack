@@ -5,17 +5,49 @@ const cartItemCount = () => {
     return 2;
 }
 
+export const createElement = ({ type, className, id, href, width, alt, src, innerText, isButton = false, style }) => {
+    const element = document.createElement(type);
+
+    if (className) {
+        element.setAttribute("class", className);
+    }
+    if (id) {
+        element.setAttribute("id", id);
+    }
+    if (href) {
+        element.setAttribute("href", href);
+    }
+    if (width) {
+        element.setAttribute("width", width);
+    }
+    if (alt) {
+        element.setAttribute("alt", alt);
+    }
+    if (src) {
+        element.setAttribute("src", src);
+    }
+    if (innerText) {
+        element.innerHTML = innerText;
+    }
+    if (isButton) {
+        element.setAttribute("role", "button")
+    }
+    if (style) {
+        element.setAttribute("style", style);
+    }
+
+    return element;
+
+}
+
 export const cartWidget = () => {
     const cart = document.querySelector(".cart");
-    const cartIconWrapper = document.createElement("a");
-    cartIconWrapper.setAttribute("class", "position-relative");
+    const cartIconWrapper = createElement({ type: "a", className: "position-relative" });
 
-    const cartIcon = document.createElement("img");
-    cartIcon.src = "http://localhost:3000/images/navbar/bag.svg";
-    cartIcon.alt = "bag";
+    const cartIcon = createElement({ type: "img", alt: "bag", src: "http://localhost:3000/images/navbar/bag.svg" });
 
-    const cartBadge = document.createElement("span");
-    cartBadge.setAttribute("class", "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger");
+    const cartBadge = createElement({ type: "span", className: "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" });
+
     const cartCount = cartItemCount();
     if (cartCount === 0)
         cartBadge.style.display = "none";
@@ -30,12 +62,8 @@ export const navBar = (navbarBgClass) => {
     const navBar = document.querySelector(".navbar");
     navBar.setAttribute("class", `navbar navbar-expand-lg border border-0 border-bottom nav-height ${navbarBgClass}`)
 
-    const navbarBrandWrapper = document.createElement('DIV');
-    navbarBrandWrapper.setAttribute('class', 'container');
-
-    const navbarBrand = document.createElement('div');
-    navbarBrand.setAttribute('class', 'navbar-brand d-flex align-items-center d-lg-none navbar-logo-2');
-    navbarBrand.setAttribute('href', '#');
+    const navbarBrandWrapper = createElement({ type: "div", className: "container" });
+    const navbarBrand = createElement({ type: "div", className: 'navbar-brand d-flex align-items-center d-lg-none navbar-logo-2' })
 
     const navbarLogoMin = document.createElement('img');
     navbarLogoMin.setAttribute('src', 'http://localhost:3000/images/navbar/logo-min.svg');
@@ -47,8 +75,8 @@ export const navBar = (navbarBgClass) => {
     navbarLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2');
     navbarLogoText.innerText = "Shrine"
     console.log(navbarLogoMin, navbarLogoText);
-    navbarBrand.append(navbarLogoMin, navbarLogoText);
 
+    navbarBrand.append(navbarLogoMin, navbarLogoText);
     navbarBrandWrapper.appendChild(navbarBrand);
 
 
@@ -77,7 +105,7 @@ export const navBar = (navbarBgClass) => {
 
     const createNavItem = (linkName) => {
         const navItem = document.createElement('LI');
-        navItem.setAttribute('class', 'nav-item');
+        navItem.setAttribute('class', 'nav-item navbar-item');
 
         const navItemAnchor = document.createElement('A');
         navItemAnchor.setAttribute('class', 'nav-link position-relative hover-link');
@@ -268,75 +296,41 @@ export const footer = (footerClass) => {
 }
 
 export const createHeading = (headingElement, title, subtitle, spacing = false, customClassSubt = "") => {
-    const heading = document.createElement("h4");
-    heading.setAttribute("class", `text-wrap font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing ? 'my-4' : ''}`);
-    heading.innerHTML = title;
-
-
-    const subHeading = document.createElement("h5");
-    subHeading.setAttribute("class", `font-16 mw-75 ${spacing ? 'pt-2' : ''} ${customClassSubt}`);
-    subHeading.innerHTML = subtitle;
+    const heading = createElement({ type: "h4", className: `text-wrap font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing ? 'my-4' : ''}`, innerText: title, })
+    const subHeading = createElement({ type: "div", innerText: subtitle, className: `font-16 mw-75 ${spacing ? 'pt-2' : ''} ${customClassSubt}` })
 
     headingElement.append(heading, subHeading);
 }
 
 export const createEventCard = ({ imgUrl, title, description: subtitle, button = "See more", date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
-    const card = document.createElement("div");
-    card.setAttribute("class", `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}`);
-
-    const rowWrapper = document.createElement("div");
-    rowWrapper.setAttribute("class", "row g-0");
-
-    const imageWrapper = document.createElement("div");
-    imageWrapper.setAttribute("class", "col-12 col-md-4");
-
-
-    const image = document.createElement("img");
-    image.src = backendUrl + imgUrl;
-    image.setAttribute("class", `w-100 h-100 object-fit-cover ${imgCustomClass}`);
-    image.alt = title;
-
-
-    const cardBodyWrapper = document.createElement("div");
-    cardBodyWrapper.setAttribute("class", "col-12 col-md-8 d-flex align-items-center");
-
-    const cardBody = document.createElement("div");
-    cardBody.setAttribute("class", `card-body ${bodyCustomClass}`);
+    const card = createElement({ type: "div", className: `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}` })
+    const rowWrapper = createElement({ type: "div", className: "row g-0" })
+    const imageWrapper = createElement({ type: "div", className: "col-12 col-md-4" })
+    const image = createElement({ type: "img", src: backendUrl + imgUrl, className: `w-100 h-100 object-fit-cover ${imgCustomClass}`, alt: title })
+    const cardBodyWrapper = createElement({ type: "div", className: "col-12 col-md-8 d-flex align-items-center" })
+    const cardBody = createElement({ type: "div", className: `card-body ${bodyCustomClass}` })
 
     if (date) {
-        const dateElement = document.createElement("h6");
-        dateElement.setAttribute("class", "font-16 fw-light")
-        dateElement.textContent = date;
+        const dateElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: date })
         cardBody.append(dateElement);
     }
     if (location) {
-        const locationElement = document.createElement("h6");
-        locationElement.setAttribute("class", "font-16 fw-light")
-        locationElement.textContent = location;
+        const locationElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: location })
         cardBody.append(locationElement);
     }
     if (time) {
-        const timeElement = document.createElement("h6");
-        timeElement.setAttribute("class", "font-16 fw-light")
-        timeElement.textContent = time;
+        const timeElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: time })
         cardBody.append(timeElement);
     }
 
-    const cardTitle = document.createElement("h5");
-    cardTitle.setAttribute("class", "card-title mt-3 roboto-serif fw-bold font-26");
-    cardTitle.innerHTML = title;
-
-    const cardText = document.createElement("p");
-    cardText.innerHTML = subtitle;
-    cardText.setAttribute("class", "card-text mb-4 fw-light font-16");
+    const cardTitle = createElement({ type: "h6", className: "card-title mt-3 roboto-serif fw-bold font-26", innerText: title })
+    const cardText = createElement({ type: "h6", className: "card-text mb-4 fw-light font-16", innerText: subtitle })
     cardBody.append(cardTitle, cardText);
 
 
     if (button) {
-        const buttonElement = document.createElement("button");
-        buttonElement.textContent = button;
-        buttonElement.setAttribute("class", "btn btn-dark")
+        const buttonElement = createElement({ type: "button", className: "btn btn-dark", innerText: button })
         cardBody.append(buttonElement);
     }
 
@@ -396,49 +390,29 @@ export const createBlogCard = ({ imageUrl: imgUrl, title, description: subtitle,
 
 }
 
-export const createServiceCard = ({ imgUrl, title, subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = 'rounded-0 rounded-top-5 rounded-end-5' }) => {
-    const divWrapper = document.createElement("div");
-    divWrapper.setAttribute("class", `card p-3 hover-card border border-0 flex-shrink-0 d-flex flex-column align-items-center ${cardCustomClass}`);
-    divWrapper.setAttribute("style", "max-width:250px");
-    divWrapper.setAttribute("role", "button");
-
-    const imgWrapper = document.createElement("img");
-    imgWrapper.setAttribute("alt", title);
-    imgWrapper.setAttribute("src", backendUrl + imgUrl);
-    imgWrapper.setAttribute("width", "50px");
+export const createServiceCard = ({ imgUrl, title, subtitle, hasButton = true, titlecustomclass = "font-26 fw-semibold", subtitleCustomClass = "font-16 fw-light", cardCustomClass = 'border flex-shrink-0 border-0 hover-card flex-column align-items-center rounded-0 rounded-top-5 rounded-end-5', cardStyle = "max-width:250px" }) => {
 
 
-    const cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "card-body text-center fit-content");
-
-    const cardTitle = document.createElement("h4");
-    cardTitle.setAttribute("class", "card-title font-26 fw-semibold");
-    cardTitle.innerHTML = title;
-
-
-    const subTitle = document.createElement("p");
-    subTitle.setAttribute("class", "card-text font-16 fw-light");
-    subTitle.innerHTML = subtitle;
-
-    const buttonElement = document.createElement("button");
-    buttonElement.setAttribute("class", "font-16 w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2");
-
-    const readMoreSpan = document.createElement("span");
-    readMoreSpan.setAttribute("class", "text-content");
-    readMoreSpan.innerText = "Read More";
-
-    const nextIconSpan = document.createElement("span");
-    nextIconSpan.setAttribute("class", "rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100");
-
-    const nextIcon = document.createElement("img");
-    nextIcon.src = backendUrl + "/images/icons/arrow-right.svg";
-    nextIcon.alt = "next-icon";
-    nextIcon.setAttribute("width", "20px");
+    const divWrapper = createElement({ type: "div", className: `card p-3 d-flex  ${cardCustomClass}`, style: cardStyle, isButton: true });
+    const imgWrapper = createElement({ type: "img", alt: title, src: backendUrl + imgUrl, width: "50px" });
+    const cardBody = createElement({ type: "div", className: "card-body text-center fit-content" });
+    const cardTitle = createElement({ type: "h4", className: `card-title ${titlecustomclass}`, innerText: title })
+    const subTitle = createElement({ type: "p", className: `card-text ${subtitleCustomClass}`, innerText: subtitle })
 
 
-    nextIconSpan.appendChild(nextIcon);
-    buttonElement.append(readMoreSpan, nextIconSpan);
-    cardBody.append(cardTitle, subTitle, buttonElement);
+    cardBody.append(cardTitle, subTitle);
+
+    if (hasButton) {
+        const buttonElement = createElement({ type: "button", className: "font-16 w-100 text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2" })
+        const readMoreSpan = createElement({ type: "span", className: `text-content ${subtitleCustomClass} fw-normal`, innerText: "Read More" })
+        const nextIconSpan = createElement({ type: "span", className: "rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100" })
+        const nextIcon = createElement({ type: "img", src: `${backendUrl}/images/icons/arrow-right.svg`, alt: "next-icon", width: "20px" })
+
+        nextIconSpan.appendChild(nextIcon);
+        buttonElement.append(readMoreSpan, nextIconSpan);
+        cardBody.append(buttonElement);
+    }
+
     divWrapper.append(imgWrapper, cardBody);
 
     return divWrapper;
@@ -553,4 +527,14 @@ export const pagingBreadcrumb = (pathElement, url) => {
 
     pathElement.append(breadcrumbList);
 
+}
+
+export const carouselMoveNext = ({ carouselSlider, item, currentIndex }) => {
+    const sliderItemWidth = item.getClientRects()[0].width;
+    carouselSlider.style.transform = `translateX(-${currentIndex * sliderItemWidth}px)`
+}
+
+export const carouselMoveBack = ({ carouselSlider, item, currentIndex }) => {
+    const sliderItemWidth = item.getClientRects()[0].width;
+    carouselSlider.style.transform = `translateX(-${currentIndex * sliderItemWidth}px)`
 }

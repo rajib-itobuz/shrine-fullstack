@@ -17,7 +17,6 @@
 $bg-primary-red: #c0304f;
 $font-tertiary: #929292;
 $hero-primary-bg: #F6F2EB;
-$bg-primrary-red: #c0304f;
 $input-background: #2f3032;
 
 .illustration {
@@ -33,6 +32,10 @@ $input-background: #2f3032;
     background-color: #FFE6E0;
 }
 
+.tertiary-text {
+    color: #FFE6E0;
+}
+
 .hidden-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -46,7 +49,13 @@ $input-background: #2f3032;
 }
 
 .bg-primary-red {
-    background-color: $bg-primrary-red !important;
+    background-color: $bg-primary-red !important;
+}
+
+input[type="checkbox"] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none'%20stroke='%23000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='3'%20d='m6%2010%203%203%206-6'/></svg>") !important;
+    background-color: white !important;
+    border-color: gray !important;
 }
 
 .rounded-card-4 {
@@ -118,7 +127,7 @@ $input-background: #2f3032;
     translate: 0% 30%;
 }
 
-.nav-item:hover .nav-link::before {
+.navbar-item:hover .nav-link::before {
     content: "";
     position: absolute !important;
     left: 0px;
@@ -128,7 +137,7 @@ $input-background: #2f3032;
     height: 2px;
 }
 
-.nav-item:hover .nav-link::after {
+.navbar-item:hover .nav-link::after {
     content: "";
     position: absolute !important;
     right: 0px;
@@ -153,6 +162,10 @@ $input-background: #2f3032;
 
 
 @media screen and (min-width:768px) {
+
+    .service-card {
+        max-width: 280px
+    }
 
     .w-md-50 {
         width: 50%;

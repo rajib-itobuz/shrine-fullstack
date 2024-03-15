@@ -4,36 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Spot</title>
+    <title>FAQ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="overflow-x-hidden ">
     <nav class="navbar navbar-expand-lg border border-0 border-bottom nav-height">
 
     </nav>
 
+    <nav class="path"></nav>
 
-    <section class="container-md pt-md-5">
 
-        <img src="/images/faqCarousel/carouselhero.png" alt="carouselHero" class="w-100 rounded-4">
+    <section class="container-md  pt-0">
+        <div class="image-slider hero position-relative">
+            <div class="rounded-card-4 overflow-hidden w-100 h-100">
+                <div class="slider d-flex h-100">
+
+                </div>
+            </div>
+            <div
+                class="position-absolute rounded-1 overflow-hidden z-3 d-flex flex-column carousel-btn-container top-50 translate-middle-y">
+                <button id="backBtn" class="btn rounded-0 btn-carousel"><img
+                        src="http://localhost:3000/images/faq/carousel/right.svg" alt="righticon"></button>
+                <button id="nextBtn" class="btn rounded-0 btn-carousel"><img
+                        src="http://localhost:3000/images/faq/carousel/left.svg" alt="lefticon"></button>
+            </div>
+        </div>
         <div class="heading d-flex flex-column justify-content-start"></div>
     </section>
 
 
     <section class="container-md py-5">
-        <div class="accordion d-flex flex-md-row flex-column flex-wrap" id="accordionExample"
-            style="--bs-accordion-btn-focus-box-shadow:rgba(0,0,0,0);--bs-accordion-active-bg:rgba(0,0,0,0);">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="accordion-container-1 accordion" id="accordionExample"
+                    style="--bs-accordion-btn-focus-box-shadow:rgba(0,0,0,0);--bs-accordion-active-bg:rgba(0,0,0,0);">
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="accordion-container-2 accordion" id="accordionExample"
+                    style="--bs-accordion-btn-focus-box-shadow:rgba(0,0,0,0);--bs-accordion-active-bg:rgba(0,0,0,0);">
+                </div>
+            </div>
         </div>
     </section>
+
+    <img src="http://localhost:3000/images/faq/illustration/crown.svg" alt="crown" width="200px"
+        class="illustration-crown position-absolute illustration">
+
+    <footer class="footer-section"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script src="script.js" type="module"></script>
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>

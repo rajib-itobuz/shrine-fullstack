@@ -1,0 +1,73 @@
+@import '../../../helper/helper.scss';
+
+
+.font-60 {
+    font-size: 60px;
+}
+
+.background-text {
+    bottom: -20px;
+}
+
+.quote-book {
+    max-height: 300px;
+}
+
+.mission-cards .card {
+    width: 100%;
+    max-width: 500px;
+
+    &>img {
+        width: 20%;
+    }
+
+    .card-body {
+        width: 100%;
+    }
+}
+
+.prayer-circle {
+    width: 125px;
+    height: 125px;
+}
+
+.-ms-3 {
+    margin-left: -8px;
+}
+
+.-mt-3 {
+    margin-top: -8px;
+}
+
+.font-14 {
+    font-size: 0.5rem;
+}
+
+@media screen and (min-width:768px) {
+    .font-14 {
+        font-size: .8rem;
+    }
+
+    .illustration-key {
+        right: 0px;
+        translate: 25%;
+    }
+
+    .illustration-bow {
+        left: 0px;
+        translate: -40%;
+    }
+
+    .mission-cards .card {
+        max-width: 300px;
+    }
+
+    .aboutus .mw-75 {
+        width: 100%;
+    }
+
+    .quote-book {
+        max-height: unset;
+        max-width: 300px;
+    }
+}

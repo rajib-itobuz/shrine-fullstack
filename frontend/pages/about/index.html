@@ -8,10 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <nav class="navbar"></nav>
 
     <nav class="path"></nav>
@@ -23,14 +23,37 @@
                     alt="">
             </div>
             <div class="col-12 col-sm-5 bg-body ">
-                <div id="aboutUsHeading"></div>
+                <div id="aboutUsHeading" class="aboutus"></div>
+                <div class="my-5">
+                    <div class="form-check my-2">
+                        <input class="form-check-input rounded-circle" checked disabled type="checkbox" value=""
+                            id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Divide the group into smaller teams.
+                        </label>
+                    </div>
+                    <div class="form-check my-2">
+                        <input class="form-check-input rounded-circle" disabled checked type="checkbox" value=""
+                            id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Give each team a Bible verse or story.
+                        </label>
+                    </div>
+                    <div class="form-check my-2">
+                        <input class="form-check-input rounded-circle" disabled checked type="checkbox" value=""
+                            id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Ask each team to act out the Bible verse or story.
+                        </label>
+                    </div>
+                </div>
                 <div>
                     <button class="btn btn-dark">Learn More</button>
                 </div>
             </div>
-            <div class="col-12 bg-danger-subtle p-3 rounded-card-4 mt-4">
+            <div class="col-12 bg-danger-subtle p-3 py-md-5 rounded-card-4 mt-4">
                 <div class="row g-3 justify-content-evenly ">
-                    <div class="col-6 text-center roboto-serif col-sm-2">
+                    <div class="col-6 text-center  text-sm-start roboto-serif col-sm-2">
                         <h2 class="m-0 font-45">300+</h2>
                         <p class="font-16 m-0">new volunteer</p>
                     </div>
@@ -38,11 +61,11 @@
                         <h2 class="m-0 font-45">88+</h2>
                         <p class="font-16 m-0">church locations</p>
                     </div>
-                    <div class="col-6 text-center roboto-serif col-sm-2">
+                    <div class="col-6 text-center text-sm-start roboto-serif col-sm-2">
                         <h2 class="m-0 font-45">$86M+</h2>
                         <p class="font-16 m-0">manage donations</p>
                     </div>
-                    <div class="col-6 text-center roboto-serif col-sm-2">
+                    <div class="col-6 text-center text-sm-start roboto-serif col-sm-2">
                         <h2 class="m-0 font-45">480+</h2>
                         <p class="font-16 m-0">new member</p>
                     </div>
@@ -50,20 +73,63 @@
             </div>
         </div>
     </section>
+    <img src="http://localhost:3000/images/aboutus/illustration/key.svg" alt="key"
+        class="illustration-key position-absolute illustration">
+
     <section class="container-md p-3 px-4">
         <div id="visionHeading" class=" gap-2 d-flex flex-column flex-md-row align-items-center">
         </div>
-        <div class="row" id="missionContainer">
-            <div class="col-12 col-md-4">
-            </div>
-            <div class="col-12 col-md-4"></div>
-            <div class="col-12 col-md-4"></div>
+        <div class="mission-cards my-4 gap-2 d-flex flex-column flex-md-row align-items-center justify-content-center"
+            id="missionContainer">
+
         </div>
     </section>
 
+    <img src="http://localhost:3000/images/aboutus/illustration/bow.svg" alt="key"
+        class="illustration-bow position-absolute illustration">
 
     <section class="container-md p-3 px-4">
+        <div class="p-3 p-md-5 row justify-content-between ">
+            <div class="col-12 col-md-5 d-flex justify-content-center">
+                <div class="position-relative">
+                    <img src="http://localhost:3000/images/quote/book.svg"
+                        class="rounded-pill h-100 w-100 quote-book object-fit-cover" alt="" srcset="" />
+                    <div
+                        class="rounded-circle prayer-circle bg-primary-red border border-3 border-white d-flex flex-column align-items-center justify-content-center position-absolute bottom-0 end-0">
+                        <span class="roboto-serif font-45 m-0 text-white">26K+</span>
+                        <span class="font-14 p-1 -mt-3 text-white">Happy Players</span>
+                    </div>
+                </div>
 
+            </div>
+            <div class="col-12 col-md-7 col-lg-6 d-flex flex-column justify-content-center">
+                <div>
+                    <h3 class="position-relative ">
+                        <span class="tertiary-text background-text roboto-serif font-60 m-0">1</span>
+                        <span class="position-relative font-26 -ms-3">Who Are we</span>
+                    </h3>
+                    <p class="font-16">A long established fact that a reader will be A long established fact that a
+                        reader.</p>
+                </div>
+                <div>
+                    <h3 class="position-relative ">
+                        <span class="tertiary-text background-text roboto-serif font-60 m-0">2</span>
+                        <span class="position-relative font-26 -ms-3">Who Are we</span>
+                    </h3>
+                    <p class="font-16">A long established fact that a reader will be A long established fact that a
+                        reader.</p>
+                </div>
+                <div>
+                    <h3 class="position-relative ">
+                        <span class="tertiary-text background-text roboto-serif font-60 m-0">2</span>
+                        <span class="position-relative font-26 -ms-3">Who Are we</span>
+                    </h3>
+                    <p class="font-16">A long established fact that a reader will be A long established fact that a
+                        reader.</p>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <footer class="footer-section"></footer>
@@ -71,7 +137,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="script.js" type="module"></script>
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+@import '../../../helper/helper.scss';
+
+body {
+    .nav-underline {
+
+        --bs-nav-underline-link-active-color: #c0304f !important;
+        --bs-nav-link-color: #747A82 !important;
+        --bs-nav-link-hover-color: #2c3139;
+    }
+
+}

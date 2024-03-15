@@ -23,6 +23,10 @@
   background-color: #FFE6E0;
 }
 
+.tertiary-text {
+  color: #FFE6E0;
+}
+
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -37,6 +41,12 @@
 
 .bg-primary-red {
   background-color: #c0304f !important;
+}
+
+input[type=checkbox] {
+  --bs-form-check-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none'%20stroke='%23000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='3'%20d='m6%2010%203%203%206-6'/></svg>") !important;
+  background-color: white !important;
+  border-color: gray !important;
 }
 
 .rounded-card-4 {
@@ -109,7 +119,7 @@
   translate: 0% 30%;
 }
 
-.nav-item:hover .nav-link::before {
+.navbar-item:hover .nav-link::before {
   content: "";
   position: absolute !important;
   left: 0px;
@@ -119,7 +129,7 @@
   height: 2px;
 }
 
-.nav-item:hover .nav-link::after {
+.navbar-item:hover .nav-link::after {
   content: "";
   position: absolute !important;
   right: 0px;
@@ -142,6 +152,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .service-card {
+    max-width: 280px;
+  }
   .w-md-50 {
     width: 50%;
   }
