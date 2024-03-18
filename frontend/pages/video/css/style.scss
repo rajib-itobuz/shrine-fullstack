@@ -1,0 +1,27 @@
+@import '../../../helper/helper.css';
+
+.item{
+    height: 100px;
+
+    &:nth-child(3){
+        // flex-grow: 1;
+        height: 300px;
+    }
+}
+
+
+@media screen and (min-width:576px) {
+    .item{
+        height: unset;
+        flex-grow: 1;
+    
+        &:nth-child(3){
+            flex-grow: 2;
+            height: unset;
+        }
+    }   
+}
+
+.active{
+    // width: 60%;
+}

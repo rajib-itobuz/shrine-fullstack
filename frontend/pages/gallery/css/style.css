@@ -115,6 +115,12 @@ input[type=checkbox] {
   font-size: 2rem;
 }
 
+body .nav-underline {
+  --bs-nav-underline-link-active-color: #c0304f !important;
+  --bs-nav-link-color: #747A82 !important;
+  --bs-nav-link-hover-color: #2c3139;
+}
+
 .navbar-logo {
   translate: 0% 30%;
 }
@@ -139,6 +145,39 @@ input[type=checkbox] {
   height: 2px;
 }
 
+.social-icons {
+  height: 30px;
+}
+
+.social-icons div img {
+  height: 20px;
+  width: 20px;
+}
+
+.share-icon img {
+  width: 20px;
+}
+.share-icon:hover {
+  background-color: #c0304f;
+}
+.share-icon:hover img {
+  filter: invert(100%);
+}
+
+.social-icons > div {
+  visibility: hidden;
+  opacity: 0;
+  height: 0px;
+  transition: all 0.5s ease;
+  transition-delay: 0s, 4000ms;
+}
+
+.social-icons > .active-social {
+  opacity: 1;
+  height: 30px;
+  visibility: visible;
+}
+
 .illustration-footer {
   bottom: -50px;
   right: 0px;
@@ -152,6 +191,10 @@ input[type=checkbox] {
 }
 
 @media screen and (min-width: 768px) {
+  .social-icons div img {
+    height: 30px;
+    width: 30px;
+  }
   .service-card {
     max-width: 280px;
   }
@@ -198,9 +241,4 @@ input[type=checkbox] {
     top: 0%;
     right: 0%;
   }
-}
-body .nav-underline {
-  --bs-nav-underline-link-active-color: #c0304f !important;
-  --bs-nav-link-color: #747A82 !important;
-  --bs-nav-link-hover-color: #2c3139;
 }/*# sourceMappingURL=style.css.map */

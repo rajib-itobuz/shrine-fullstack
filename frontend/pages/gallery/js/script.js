@@ -1,10 +1,17 @@
-import { cartWidget, createElement, createHeading, footer, navBar, pagingBreadcrumb } from "../../../helper/helper.js";
+import { cartWidget, createElement, createHeading, createTabList, footer, navBar, pagingBreadcrumb } from "../../../helper/helper.js";
 
 const pathElement = document.querySelector(".path");
 const headingElement = document.querySelector('.heading');
-const navTabs = document.getElementsByClassName("tab-link");
+const tabContainer = document.querySelector(".tab-container");
 const gallery = document.querySelector(".gallery");
-const navTabsArr = Array.from(navTabs);
+const navbarTabsCategories=[
+    "All",
+    "Church",
+    "Donation",
+    "Charity",
+    "Education"
+] //categories
+let navTabs=[];
 const currentPath = window.location.pathname;
 const path = ("home" + currentPath).trim().split("/");
 let currentIndex = 0;
@@ -84,13 +91,14 @@ const renderGallery = (filterCriteria) => {
 
 renderGallery("#all");
 
+navTabs=createTabList(tabContainer,navbarTabsCategories);
 
 navTabs[currentIndex].classList.add("active");
 
 
 window.addEventListener("hashchange", (e) => {
     navTabs[currentIndex].classList.remove("active")
-    currentIndex = navTabsArr.findIndex((item) => item.getAttribute("href") === location.hash);
+    currentIndex = navTabs.findIndex((item) => item.getAttribute("href") === location.hash);
     navTabs[currentIndex].classList.add("active")
     renderGallery(location.hash);
 })

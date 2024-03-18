@@ -8,22 +8,22 @@ export const teamData = async (req, res) => {
             subHeading: "A long established fact that a reader will be distracted by the readable content of a page when looking.A long established fact that.A long.",
             teamMembers: [
                 {
-                    imageUrl: '/images/team/pope.png',
+                    imageUrl: '/images/home/team/pope.png',
                     name: 'Vonda Sanders',
                     penName: 'Sir Gerry Serrano',
                 },
                 {
-                    imageUrl: '/images/team/lori.png',
+                    imageUrl: '/images/home/team/lori.png',
                     name: 'Lori Vega',
                     penName: 'Sir Gerry Serrano',
                 },
                 {
-                    imageUrl: '/images/team/annie.png',
+                    imageUrl: '/images/home/team/annie.png',
                     name: 'Annie Trevano',
                     penName: 'Sir Gerry Serrano',
                 },
                 {
-                    imageUrl: '/images/team/ronnie.png',
+                    imageUrl: '/images/home/team/ronnie.png',
                     name: 'Ronnie Ferrel',
                     penName: 'Sir Gerry Serrano',
                 },
@@ -41,27 +41,27 @@ export const servicesData = (req, res) => {
             "subHeading": "A long established fact that a reader will be distracted by the readable content of a page when looking.A long established fact that.A long.",
             "serviceCards": [
                 {
-                    "imgUrl": "/images/satisfaction/church.svg",
+                    "imgUrl": "/images/home/satisfaction/church.svg",
                     "title": "Our churches",
                     "subtitle": "A long established fact that a reade."
                 },
                 {
-                    "imgUrl": "/images/satisfaction/church.svg",
+                    "imgUrl": "/images/home/satisfaction/church.svg",
                     "title": "Our churches",
                     "subtitle": "A long established fact that a reade."
                 },
                 {
-                    "imgUrl": "/images/satisfaction/church.svg",
+                    "imgUrl": "/images/home/satisfaction/church.svg",
                     "title": "Our churches",
                     "subtitle": "A long established fact that a reade."
                 },
                 {
-                    "imgUrl": "/images/satisfaction/church.svg",
+                    "imgUrl": "/images/home/satisfaction/church.svg",
                     "title": "Our churches",
                     "subtitle": "A long established fact that a reade."
                 },
                 {
-                    "imgUrl": "/images/satisfaction/church.svg",
+                    "imgUrl": "/images/home/satisfaction/church.svg",
                     "title": "Our churches",
                     "subtitle": "A long established fact that a reade."
                 }
@@ -80,7 +80,7 @@ export const eventsData = async (req, res) => {
             "subHeading": "A long established fact that a reader will be distracted by the readable content of a page when looking.A long established fact that.A long.",
             "eventCardObject": [
                 {
-                    "imgUrl": "/images/events/events.png",
+                    "imgUrl": "/images/home/events/events.png",
                     "title": "Mindfullness Meidtation",
                     "description": "A long established fact that a reader will be distracted by the readable content of...",
                     "date": "24.12.2023-28.12.2023",
@@ -89,7 +89,7 @@ export const eventsData = async (req, res) => {
                     "button": "Join Now"
                 },
                 {
-                    "imgUrl": "/images/events/events.png",
+                    "imgUrl": "/images/home/events/events.png",
                     "title": "The positive aura seminar",
                     "description": "A long established fact that a reader will be distracted by the readable content of...",
                     "date": "24.12.2023-28.12.2023",
@@ -98,7 +98,7 @@ export const eventsData = async (req, res) => {
                     "button": "Join Now"
                 },
                 {
-                    "imgUrl": "/images/events/events.png",
+                    "imgUrl": "/images/home/events/events.png",
                     "title": "Mindfullness Meidtation",
                     "description": "A long established fact that a reader will be distracted by the readable content of...",
                     "date": "24.12.2023-28.12.2023",
@@ -107,7 +107,7 @@ export const eventsData = async (req, res) => {
                     "button": "Join Now"
                 },
                 {
-                    "imgUrl": "/images/events/events.png",
+                    "imgUrl": "/images/home/events/events.png",
                     "title": "Mindfullness Meidtation",
                     "description": "A long established fact that a reader will be distracted by the readable content of...",
                     "date": "24.12.2023-28.12.2023",
@@ -116,7 +116,7 @@ export const eventsData = async (req, res) => {
                     "button": "Join Now"
                 },
                 {
-                    "imgUrl": "/images/events/events.png",
+                    "imgUrl": "/images/home/events/events.png",
                     "title": "The positive aura seminar",
                     "description": "A long established fact that a reader will be distracted by the readable content of...",
                     "date": "24.12.2023-28.12.2023",
@@ -125,7 +125,7 @@ export const eventsData = async (req, res) => {
                     "button": "Join Now"
                 },
                 {
-                    "imgUrl": "/images/events/events.png",
+                    "imgUrl": "/images/home/events/events.png",
                     "title": "Mindfullness Meidtation",
                     "description": "A long established fact that a reader will be distracted by the readable content of...",
                     "date": "24.12.2023-28.12.2023",
@@ -148,26 +148,26 @@ export const blogData = async (req, res) => {
             // "featured": blogs[featuredContent],
             "blogCards": [
                 {
-                    "imageUrl": "/images/articles/church.png",
+                    "imageUrl": "/images/home/articles/church.png",
                     "title": "Baptism Sunday of<br/> church",
                     "description": "Sir Gerry Serrano A long established fact that a reader will be distracted by the readable content of...",
-                    "authorImgUrl": "/images/subscribe/mary.png",
+                    "authorImgUrl": "/images/home/subscribe/mary.png",
                     "readTime": "2min read",
                     "author": "Chris"
                 },
                 {
-                    "imageUrl": "/images/articles/church.png",
+                    "imageUrl": "/images/home/articles/church.png",
                     "title": "Baptism Sunday of<br/> church",
                     "description": "Sir Gerry Serrano A long established fact that a reader will be distracted by the readable content of...",
-                    "authorImgUrl": "/images/subscribe/mary.png",
+                    "authorImgUrl": "/images/home/subscribe/mary.png",
                     "readTime": "2min read",
                     "author": "Joe"
                 },
                 {
-                    "imageUrl": "/images/articles/church.png",
+                    "imageUrl": "/images/home/articles/church.png",
                     "title": "Baptism Sunday of<br/> church",
                     "description": "Sir Gerry Serrano A long established fact that a reader will be distracted by the readable content of...",
-                    "authorImgUrl": "/images/subscribe/mary.png",
+                    "authorImgUrl": "/images/home/subscribe/mary.png",
                     "readTime": "2min read",
                     "author": "Ramana"
                 }

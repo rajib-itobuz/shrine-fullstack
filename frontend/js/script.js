@@ -59,7 +59,7 @@ const renderTeamData = async () => {
 
     createHeading(teamHeading, title, subtitle);
     teamMembers.forEach(e => {
-        cardContainer.append(createTeamCard({ ...e, imgCustomClass: 'event-image', cardCustomClass: 'event-card' }))
+        cardContainer.append(createTeamCard({ ...e,customColWrapper:"col-6 col-sm-4 col-md-3 ", imgCustomClass: 'event-image rounded-pill', cardCustomClass: 'event-card' }))
     })
 
 }

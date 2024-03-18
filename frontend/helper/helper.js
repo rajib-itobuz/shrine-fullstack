@@ -1,4 +1,4 @@
-const backendUrl = "http://localhost:3000"
+export const backendUrl = "http://localhost:3000"
 
 
 const cartItemCount = () => {
@@ -74,7 +74,6 @@ export const navBar = (navbarBgClass) => {
     const navbarLogoText = document.createElement('h3');
     navbarLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2');
     navbarLogoText.innerText = "Shrine"
-    console.log(navbarLogoMin, navbarLogoText);
 
     navbarBrand.append(navbarLogoMin, navbarLogoText);
     navbarBrandWrapper.appendChild(navbarBrand);
@@ -285,11 +284,11 @@ export const footer = (footerClass) => {
     }
 
 
-    footerIconsWrapper.appendChild(createFooterIcon('instagram', 'http://localhost:3000/images/footer/instagram.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('twitter', 'http://localhost:3000/images/footer/twitter.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('whatsapp', 'http://localhost:3000/images/footer/whatsapp.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('youtube', 'http://localhost:3000/images/footer/youtube.svg'));
-    footerIconsWrapper.appendChild(createFooterIcon('facebook', 'http://localhost:3000/images/footer/facebook.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('instagram', 'http://localhost:3000/images/icons/instagram.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('twitter', 'http://localhost:3000/images/icons/twitter.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('whatsapp', 'http://localhost:3000/images/icons/whatsapp.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('youtube', 'http://localhost:3000/images/icons/youtube.svg'));
+    footerIconsWrapper.appendChild(createFooterIcon('facebook', 'http://localhost:3000/images/icons/facebook.svg'));
 
 
     footer.append(footerLogoWrapper, footerContainer, footerCopyright);
@@ -312,15 +311,15 @@ export const createEventCard = ({ imgUrl, title, description: subtitle, button =
     const cardBody = createElement({ type: "div", className: `card-body ${bodyCustomClass}` })
 
     if (date) {
-        const dateElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: date })
+        const dateElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: `<img class="me-2" src="${backendUrl}/images/icons/calendar.svg" width="20px" alt="calendar">` + date })
         cardBody.append(dateElement);
     }
     if (location) {
-        const locationElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: location })
+        const locationElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: `<img class="me-2" src="${backendUrl}/images/icons/home.svg" width="20px" alt="home">` + location })
         cardBody.append(locationElement);
     }
     if (time) {
-        const timeElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: time })
+        const timeElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: `<img class="me-2" src="${backendUrl}/images/icons/clock.svg" width="20px" alt="clock">` + time })
         cardBody.append(timeElement);
     }
 
@@ -419,43 +418,33 @@ export const createServiceCard = ({ imgUrl, title, subtitle, hasButton = true, t
 
 }
 
-export const createTeamCard = ({ imageUrl, name: title, penName: subtitle, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createTeamCard = ({ imageUrl, name: title, penName: subtitle, customColWrapper, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
-    const teamWrapper = document.createElement('div');
-    teamWrapper.setAttribute('class', 'col-6 col-sm-4 col-md-3 d-flex justify-content-center');
-
-    const cardDiv = document.createElement('div');
-    cardDiv.setAttribute('class', 'card team-card border border-0');
-
-
-    const imgElement = document.createElement('img');
-    imgElement.src = backendUrl + imageUrl;
-    imgElement.setAttribute('class', `rounded-pill ${imgCustomClass}`);
-    imgElement.alt = title;
-
-    const cardBodyWrapper = document.createElement('div');
-    cardBodyWrapper.setAttribute('class', `d-flex flex-md-row flex-column-reverse gap-2 justify-content-md-evenly align-items-center mt-3 ${bodyCustomClass}`);
-
-    const shareIconDiv = document.createElement('div');
-    shareIconDiv.setAttribute('class', 'share-icon rounded-circle d-flex justify-content-center align-items-center');
-    shareIconDiv.role = "button"
+    const teamWrapper = createElement({ type: "div", className: `${customColWrapper} d-flex justify-content-center` });
+    const cardDiv = createElement({ type: "div", className: 'card border border-0' });
+    const imgElement = createElement({ type: "img", src: backendUrl + imageUrl, className: `${imgCustomClass}`, alt: title });
+    const cardBodyWrapper = createElement({ type: "div", className: `d-flex flex-row gap-1 justify-content-md-evenly align-items-start mt-3 ${bodyCustomClass}` });
+    const shareIconDiv = createElement({ type: "div", className: 'share-icon border p-2 rounded-circle d-flex justify-content-center align-items-center', isButton: true });
+    const shareIcon = createElement({ type: "img", src: 'http://localhost:3000/images/icons/share.svg', alt: "share-icon" });
+    const nameWrapper = createElement({ type: "div" });
+    const name = createElement({ type: "h4", className: 'fw-bold font-26', innerText: title });
+    const subTitle = createElement({ type: "h6", className: 'fw-light font-16', innerText: subtitle });
 
 
-    const shareIcon = document.createElement('img');
-    shareIcon.src = 'http://localhost:3000/images/team/share.svg';
-    shareIcon.alt = 'share-icon';
+    const socialIconWrapper = createElement({ type: "div", className: 'social-icons' })
+    const socialIcons = createElement({ type: "div", className: 'gap-1 d-flex' })
+    const instaIcon = createElement({ type: "img", src: 'http://localhost:3000/images/icons/instagram.svg', alt: "insta-icon", width: "30px", isButton: true });
+    const googleIcon = createElement({ type: "img", src: 'http://localhost:3000/images/icons/google.svg', href: "www.google.com", alt: "google-icon", width: "30px", isButton: true });
+    const youtubeIcon = createElement({ type: "img", src: 'http://localhost:3000/images/icons/youtube.svg', alt: "youtube-icon", width: "30px", isButton: true });
+    socialIcons.append(instaIcon, googleIcon, youtubeIcon);
+    socialIconWrapper.append(socialIcons);
 
-    const nameWrapper = document.createElement('div');
+    const toggleSocialIcons = () => {
+        socialIcons.classList.toggle("active-social");
+    }
+    shareIconDiv.onclick = toggleSocialIcons;
 
-    const name = document.createElement('h4');
-    name.setAttribute('class', 'fw-bold font-26');
-    name.textContent = title;
-
-    const subTitle = document.createElement('h6');
-    subTitle.setAttribute('class', 'fw-light font-16');
-    subTitle.textContent = subtitle;
-
-    nameWrapper.append(name, subTitle);
+    nameWrapper.append(name, subTitle, socialIconWrapper);
     shareIconDiv.appendChild(shareIcon);
     cardBodyWrapper.append(shareIconDiv, nameWrapper);
     cardDiv.append(imgElement, cardBodyWrapper);
@@ -497,6 +486,8 @@ export const createAccordion = ({ title, subtitle, index }) => {
 
 }
 
+
+// dynamic paging form url arrau show breadcrumbs
 export const pagingBreadcrumb = (pathElement, url) => {
 
     pathElement.setAttribute("class", "d-flex justify-content-center my-3");
@@ -529,6 +520,72 @@ export const pagingBreadcrumb = (pathElement, url) => {
 
 }
 
+// team card Hroizontal
+export const createHorizontalTeamCard = ({ imgUrl, title, description: subtitle, button = "See more", date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+
+    const card = createElement({ type: "div", className: `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}` });
+    const imgWrapper=createElement({type:"div",className:"position-relative"});
+    const imageElement = createElement({ type: "img", src: backendUrl + imgUrl, className: `w-100 object-fit-cover ${imgCustomClass}`, alt: title });
+    const calendarOverlay=createElement({type:"span",className:"calendar-card d-inline-block rounded-top-2 position-absolute bottom-0",});
+    
+    imgWrapper.append(imageElement,calendarOverlay);
+
+    const cardBody = createElement({ type: "div", className: `card-body ${bodyCustomClass}` });
+
+    if (date) {
+        const dateElement = createElement({ type: "h6", className: "font-16 fw-bold", innerText: date })
+        cardBody.append(dateElement);
+    }
+
+    const dataWrapper=createElement({type:"div",className:"d-flex gap-3"});
+    cardBody.append(dataWrapper);
+
+    if (time) {
+        const timeElement = createElement({ type: "h6", className: "font-16 fw-light d-inline-block", innerText: `<img class="me-1" src="${backendUrl}/images/icons/time.svg" width="20px" alt="clock">` + time })
+        dataWrapper.append(timeElement);
+    }
+    if (location) {
+        const locationElement = createElement({ type: "h6", className: "font-16 fw-light d-inline-block", innerText: `<img class="me-1" src="${backendUrl}/images/icons/location.svg" width="20px" alt="place">` + location })
+        dataWrapper.append(locationElement);
+    }
+
+    const cardTitle = createElement({ type: "h6", className: "card-title mt-3 roboto-serif fw-bold font-26", innerText: title })
+    const cardText = createElement({ type: "h6", className: "card-text mb-4 fw-lighter font-16", innerText: subtitle })
+    cardBody.append(cardTitle, cardText);
+
+
+    if (button) {
+        const buttonElement = createElement({ type: "button", className: "btn btn-dark", innerText: button })
+        cardBody.append(buttonElement);
+    }
+
+
+
+    card.append(imgWrapper, cardBody);
+
+    return card;
+
+}
+
+
+// tabbar and pages
+export const createTabList = (tabContainer, navbarTabsCategories, isCenter = true) => {
+    const navTabs = [];
+    const tabListWrapper = createElement({ type: "ul", className: `nav nav-underline navlink-tabs border-bottom d-flex ${isCenter ? 'justify-content-center' : ''}` });
+    navbarTabsCategories.forEach((item) => {
+        const tabListItem = createElement({ type: "li", className: "nav-item" });
+        const anchorLink = createElement({ type: "a", className: "nav-link tab-link", href: `#${item.toLowerCase()}`, innerText: item });
+        navTabs.push(anchorLink);
+        tabListItem.appendChild(anchorLink);
+        tabListWrapper.append(anchorLink);
+    })
+    tabContainer.append(tabListWrapper);
+
+    return navTabs;
+}
+
+
+// carousel button actions --- dynamic
 export const carouselMoveNext = ({ carouselSlider, item, currentIndex }) => {
     const sliderItemWidth = item.getClientRects()[0].width;
     carouselSlider.style.transform = `translateX(-${currentIndex * sliderItemWidth}px)`

@@ -63,7 +63,7 @@ pagingBreadcrumb(pathElement, path.slice(0, path.length));
 createHeading(headingElement, headings.heading, headings.subHeading, true);
 
 [1, 2, 3, 4, 5].forEach((item, index) => {
-    const image = createElement({ type: "img", src: "http://localhost:3000/images/faq/faqCarousel/carouselhero.png", alt: `sliderimage${index}`, className: "sliderImage w-100 h-100" });
+    const image = createElement({ type: "img", src: "http://localhost:3000/images/faq/carousel/carouselhero.png", alt: `sliderimage${index}`, className: "sliderImage flex-shrink-0 w-100 h-100" });
     carouselSlider.append(image);
 })
 

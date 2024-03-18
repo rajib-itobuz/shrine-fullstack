@@ -1,0 +1,41 @@
+@import '../../../helper/helper.scss';
+
+$bg-primary-red: #c0304f;
+
+
+.illustration-crown {
+    right: 0;
+    bottom: -10%;
+}
+
+.slider {
+    transition: transform .8s ease;
+}
+
+.carousel-btn-container {
+    right: 0px;
+    translate: 10%;
+}
+
+
+.hero {
+    height: 450px;
+}
+
+.btn-carousel {
+
+    background-color: #26070D;
+
+    &:hover {
+        background-color: #C0304F;
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    .carousel-btn-container {
+        translate: 50%;
+
+
+    }
+}

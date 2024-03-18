@@ -1,0 +1,21 @@
+@import '../../../helper/helper.scss';
+
+
+.event-card {
+    max-width: 17rem;
+}
+
+.calendar-card {
+    background: url(http://localhost:3000/images/icons/calendar-white.svg) no-repeat center;
+    background-color: black;
+    width: 55px;
+    height: 50px;
+    left: 5%;
+}
+
+@media screen and (min-width:768px) {
+    .event-card {
+        max-width: unset;
+        width: 100%;
+    }
+}
