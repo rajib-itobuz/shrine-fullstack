@@ -1,0 +1,10 @@
+@import '../../../helper/helper.scss';
+
+
+div.mw-75 {
+    width: 100%;
+}
+
+.quote {
+    @extend .mission-card-bg;
+}

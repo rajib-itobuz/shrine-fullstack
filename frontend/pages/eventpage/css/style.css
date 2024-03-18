@@ -121,6 +121,14 @@ body .nav-underline {
   --bs-nav-link-hover-color: #2c3139;
 }
 
+.pagination li a:is(.active) {
+  background-color: #c0304f !important;
+  color: #fff !important;
+}
+.pagination li a:not(.active) {
+  color: #000 !important;
+}
+
 .navbar-logo {
   translate: 0% 30%;
 }
@@ -242,10 +250,18 @@ body .nav-underline {
     right: 0%;
   }
 }
+.map-container {
+  height: 300px;
+  border-radius: 0.5rem;
+  padding-inline: 0px !important;
+}
+
+.featured-date {
+  top: 20px;
+}
+
 @media screen and (min-width: 768px) {
   .map-container {
     height: 500px;
-    border-radius: 0.5rem;
-    padding-inline: 0px !important;
   }
 }/*# sourceMappingURL=style.css.map */

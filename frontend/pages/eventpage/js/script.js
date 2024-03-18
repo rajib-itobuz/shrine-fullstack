@@ -1,9 +1,13 @@
-import { cartWidget, footer, navBar, createHeading, pagingBreadcrumb, createElement, createTabList } from '../../../helper/helper.js'
+import { cartWidget, footer, navBar, createHeading, pagingBreadcrumb, createElement, createTabList, createHorizontalEventCard, createForm } from '../../../helper/helper.js'
 
 const pathElement = document.querySelector(".path");
+const formContainer = document.querySelector(".contact-form");
 const currentPath = window.location.pathname;
 const path = ("home" + currentPath).trim().split("/");
 const headingElement = document.querySelector('.heading');
+const featureCard = document.querySelector('.feature-card');
+const categoryContainer = document.querySelector('.category-container');
+const tagContainer = document.querySelector('.tag-container');
 const eventBody = document.querySelector(".event-body");
 const tabDisplayContainer = document.querySelector(".tab-display");
 const baseUrl = "http://localhost:3000"
@@ -22,10 +26,10 @@ const createEventBody = ({ imageUrl, title, content }) => {
   imgDiv.append(imgElement);
 
   const titleDiv = createElement({ type: "h2", innerText: title, className: "font-45 mb-5 fw-bold roboto-serif" });
-  const dateContent=createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif",innerText:`<img class="me-2" src="http:\\\\localhost:3000/images/icons/calendar.svg" width="20px" alt="calendar">October 26, 2023- October 28, 2023` });
-  const timeContent=createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif",innerText:`<img class="me-2" src="http:\\\\localhost:3000/images/icons/time.svg" width="20px" alt="time">6:00 pm -12:00 pm` });
-  const locationContent=createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif",innerText:`<img class="me-2" src="http:\\\\localhost:3000/images/icons/map.svg" width="20px" alt="map">Durham` });
-  const textContent=createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif",innerText:`<img class="me-2" src="http:\\\\localhost:3000/images/icons/content.svg" width="20px" alt="content">Where Faith Finds Hope, Bounds Church` });
+  const dateContent = createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif", innerText: `<img class="me-2" src="http:\\\\localhost:3000/images/icons/calendar.svg" width="20px" alt="calendar">October 26, 2023- October 28, 2023` });
+  const timeContent = createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif", innerText: `<img class="me-2" src="http:\\\\localhost:3000/images/icons/time.svg" width="20px" alt="time">6:00 pm -12:00 pm` });
+  const locationContent = createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif", innerText: `<img class="me-2" src="http:\\\\localhost:3000/images/icons/map.svg" width="20px" alt="map">Durham` });
+  const textContent = createElement({ type: "p", innerText: title, className: "font-12 fw-light roboto-serif", innerText: `<img class="me-2" src="http:\\\\localhost:3000/images/icons/content.svg" width="20px" alt="content">Where Faith Finds Hope, Bounds Church` });
 
 
   const button = createElement({ type: "button", innerText: "Booking Now", className: "btn my-3 btn-dark font-16 w-25 py-3" });
@@ -33,9 +37,18 @@ const createEventBody = ({ imageUrl, title, content }) => {
   const contentDiv = createElement({ type: "p", innerText: content, className: "font-16" })
 
 
-  eventBody.prepend(imgDiv, titleDiv,dateContent,timeContent,locationContent,textContent, button, contentDiv);
+  eventBody.prepend(imgDiv, titleDiv, dateContent, timeContent, locationContent, textContent, button, contentDiv);
 }
 
+const featuredCard = (title, location, date) => {
+  featureCard.append(createHorizontalEventCard({ imgUrl: '/images/eventpage/featured/featured.png', title, time: date, location }));
+}
+
+const categories = [
+  "Indecent Day",
+  "Mother Day",
+  "Church Events"
+]
 const tags = [
   "Blog",
   "Book"
@@ -81,13 +94,12 @@ const renderMap = (displayContainer) => {
   const tagDiv = createElement({ type: "h4", className: "font-16 fw-bold mt-4" });
   tagDiv.innerHTML = "Tags:&nbsp;";
   tags.forEach((e) => tagDiv.append(createElement({ type: "span", className: "font-12 fw-semibold border px-3 py-2 mx-2 text-uppercase", innerText: e })));
-
-  // const socialDiv=createElement({ type: "div", className: "font-16 fw-bold" });
-
-
-
   displayContainer.append(tagDiv);
 }
+
+
+tags.forEach((e) => tagContainer.append(createElement({ isButton: true, type: "span", className: "font-12 fw-semibold border px-3 py-2 rounded-2 text-uppercase", innerText: e })));
+
 
 
 const rendergallery = (gallery) => {
@@ -108,7 +120,7 @@ const renderTabCategory = (hashName) => {
   if (hashName === "#location") {
     renderMap(tabDisplayContainer);
   } else if (hashName === "#gallery") {
-    const galleryWrapper=createElement({type:"div",className:"row g-2"});
+    const galleryWrapper = createElement({ type: "div", className: "row g-2" });
     tabDisplayContainer.appendChild(galleryWrapper)
     rendergallery(galleryWrapper);
   }
@@ -135,9 +147,15 @@ async function initMap() {
 }
 
 
-navBar();
+navBar('bg-white');
 cartWidget();
 createHeading(headingElement, headings.heading, headings.subHeading, true);
+categories.forEach((e) => {
+  const categoryDiv = createElement({ type: "div", className: "d-flex gap-2 my-2 font-16" });
+  const folderIcon = createElement({ type: "img", src: baseUrl + "/images/icons/folder.svg", width: "20px" })
+  categoryDiv.append(folderIcon, e);
+  categoryContainer.append(categoryDiv);
+})
 
 createEventBody({
   imageUrl: "/images/events/hero/hero.png",
@@ -151,6 +169,7 @@ navTabs = createTabList(tabContainer, navBarCategories, false)
 navTabs[currentIndex].classList.add("active")
 renderTabCategory("#location");
 pagingBreadcrumb(pathElement, path.slice(0, path.length));
+createForm(formContainer, 'A better building', "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.", [{ title: "name", type: "text" }, { title: "email", type: "email" }, { title: "phone", type: "tel" }], true);
 footer();
 
 window.addEventListener("hashchange", () => {

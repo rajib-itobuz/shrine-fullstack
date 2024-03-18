@@ -79,7 +79,7 @@ $banner-color: #FFE6E0;
     }
 
     .item-doll {
-        background: url(http://localhost:3000/images/volunteer/doll.svg) no-repeat center;
+        background: url(http://localhost:3000/images/home/volunteer/doll.svg) no-repeat center;
         background-size: cover;
     }
 }
@@ -125,7 +125,7 @@ $banner-color: #FFE6E0;
     }
 
     .featured {
-        background: url(http://localhost:3000/images/subscribe/subscribe.png) no-repeat center;
+        background: url(http://localhost:3000/images/home/subscribe/subscribe.png) no-repeat center;
         background-size: cover;
 
         &>div {
@@ -178,9 +178,22 @@ input[type="checkbox"]:checked {
 }
 
 
+
+.custom-card {}
+
 @media screen and (min-width:400px) {
     .hero-image {
         grid-template-rows: 0.8fr 0.8fr 1.6fr;
+    }
+}
+
+@media (min-width:572px) {
+    .blog-card {
+
+        .blog-image {
+            width: 50%;
+        }
+
     }
 }
 
@@ -241,6 +254,17 @@ input[type="checkbox"]:checked {
         .event-image {
             max-height: unset;
         }
+    }
+
+    .blog-card {
+
+        .blog-image {
+            width: unset;
+            border-bottom-left-radius: unset !important;
+            border-bottom-right-radius: unset !important;
+            ;
+        }
+
     }
 
     .growing-hands {

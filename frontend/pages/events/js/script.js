@@ -1,4 +1,4 @@
-import { cartWidget, createElement, footer, navBar, createHeading, pagingBreadcrumb, backendUrl, createServiceCard, createHorizontalTeamCard } from '../../../helper/helper.js';
+import { cartWidget, createElement, footer, navBar, createHeading, pagingBreadcrumb, backendUrl, createServiceCard, createHorizontalEventCard } from '../../../helper/helper.js';
 
 
 const pathElement = document.querySelector(".path");
@@ -6,7 +6,7 @@ const currentPath = window.location.pathname;
 const path = ("home" + currentPath).trim().split("/");
 const headingElement = document.querySelectorAll('.heading');
 const missionContainer = document.getElementById("missionContainer");
-const teamCardContainer = document.querySelector(".team-card-container");
+const eventCardContainer = document.querySelector(".event-card-container");
 
 
 const headings =
@@ -32,59 +32,59 @@ const missioncards = [
         subtitle: "A long established fact that a reader will be A long."
     }
 ]
-const teamCards=[
+const eventCards = [
 
     {
-        imgUrl:"/images/events/events/baptism.png",
-        title:"Faithful Hearts,<br> Boundless Grace.",
-        description:"long established fact that a reader will be distracted by the readable",
-        date:"26.10.2013",
-        time:"12:00 am",
-        location:"Kingdom Church",
+        imgUrl: "/images/events/events/baptism.png",
+        title: "Faithful Hearts,<br> Boundless Grace.",
+        description: "long established fact that a reader will be distracted by the readable",
+        date: "26.10.2013",
+        time: "12:00 am",
+        location: "Kingdom Church",
     },
     {
-        imgUrl:"/images/events/events/baptism.png",
-        title:"Faithful Hearts,<br> Boundless Grace.",
-        description:"long established fact that a reader will be distracted by the readable",
-        date:"26.10.2013",
-        time:"12:00 am",
-        location:"Kingdom Church",
+        imgUrl: "/images/events/events/baptism.png",
+        title: "Faithful Hearts,<br> Boundless Grace.",
+        description: "long established fact that a reader will be distracted by the readable",
+        date: "26.10.2013",
+        time: "12:00 am",
+        location: "Kingdom Church",
     },
     {
-        imgUrl:"/images/events/events/baptism.png",
-        title:"Faithful Hearts,<br> Boundless Grace.",
-        description:"long established fact that a reader will be distracted by the readable",
-        date:"26.10.2013",
-        time:"12:00 am",
-        location:"Kingdom Church",
+        imgUrl: "/images/events/events/baptism.png",
+        title: "Faithful Hearts,<br> Boundless Grace.",
+        description: "long established fact that a reader will be distracted by the readable",
+        date: "26.10.2013",
+        time: "12:00 am",
+        location: "Kingdom Church",
     },
     {
-        imgUrl:"/images/events/events/baptism.png",
-        title:"Faithful Hearts,<br> Boundless Grace.",
-        description:"long established fact that a reader will be distracted by the readable",
-        date:"26.10.2013",
-        time:"12:00 am",
-        location:"Kingdom Church",
+        imgUrl: "/images/events/events/baptism.png",
+        title: "Faithful Hearts,<br> Boundless Grace.",
+        description: "long established fact that a reader will be distracted by the readable",
+        date: "26.10.2013",
+        time: "12:00 am",
+        location: "Kingdom Church",
     },
     {
-        imgUrl:"/images/events/events/baptism.png",
-        title:"Faithful Hearts,<br> Boundless Grace.",
-        description:"long established fact that a reader will be distracted by the readable",
-        date:"26.10.2013",
-        time:"12:00 am",
-        location:"Kingdom Church",
+        imgUrl: "/images/events/events/baptism.png",
+        title: "Faithful Hearts,<br> Boundless Grace.",
+        description: "long established fact that a reader will be distracted by the readable",
+        date: "26.10.2013",
+        time: "12:00 am",
+        location: "Kingdom Church",
     },
     {
-        imgUrl:"/images/events/events/baptism.png",
-        title:"Faithful Hearts,<br> Boundless Grace.",
-        description:"long established fact that a reader will be distracted by the readable",
-        date:"26.10.2013",
-        time:"12:00 am",
-        location:"Kingdom Church",
+        imgUrl: "/images/events/events/baptism.png",
+        title: "Faithful Hearts,<br> Boundless Grace.",
+        description: "long established fact that a reader will be distracted by the readable",
+        date: "26.10.2013",
+        time: "12:00 am",
+        location: "Kingdom Church",
     }
 ]
 
-navBar();
+navBar('bg-white');
 cartWidget();
 createHeading(headingElement[0], headings.heading, headings.subHeading, true);
 createHeading(headingElement[1], headings.heading, headings.subHeading, true);
@@ -95,10 +95,10 @@ missioncards.forEach((item, index) => {
 })
 
 
-teamCards.forEach((e)=>{
-    const cardWrapper=createElement({type:"div",className:"col-12 col-sm-6 col-lg-4 d-flex justify-content-center"})
-    cardWrapper.append(createHorizontalTeamCard({...e,cardCustomClass:"event-card",button:"Learn More"}));
-    teamCardContainer.append(cardWrapper);
+eventCards.forEach((e) => {
+    const cardWrapper = createElement({ type: "div", className: "col-12 col-sm-6 col-lg-4 d-flex justify-content-center" })
+    cardWrapper.append(createHorizontalEventCard({ ...e, cardCustomClass: "event-card", button: "Learn More" }));
+    eventCardContainer.append(cardWrapper);
 })
 
 pagingBreadcrumb(pathElement, path.slice(0, path.length));

@@ -49,7 +49,7 @@ const teamMembers = [
 ]
 
 
-navBar();
+navBar('bg-white');
 cartWidget();
 
 pagingBreadcrumb(pathElement, path.slice(0, path.length));
@@ -60,8 +60,8 @@ createHeading(headingElement, headings.heading, headings.subHeading, true);
     carouselSlider.append(image);
 })
 
-teamMembers.forEach((member,index)=>{
-    teamContainer.append(createTeamCard({...member,customColWrapper:"col-6 col-md-4",imgCustomClass:"rounded",}))
+teamMembers.forEach((member, index) => {
+    teamContainer.append(createTeamCard({ ...member, customColWrapper: "col-6 col-md-4", imgCustomClass: "rounded", }))
 });
 
 setInterval(() => {

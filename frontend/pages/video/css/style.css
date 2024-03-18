@@ -6,6 +6,10 @@
   height: 300px;
 }
 
+.video-card img {
+  height: 250px;
+}
+
 @media screen and (min-width: 576px) {
   .item {
     height: unset;

@@ -45,12 +45,12 @@ export const cartWidget = () => {
     const cartIconWrapper = createElement({ type: "a", className: "position-relative" });
 
     const cartIcon = createElement({ type: "img", alt: "bag", src: "http://localhost:3000/images/navbar/bag.svg" });
-
     const cartBadge = createElement({ type: "span", className: "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" });
-
     const cartCount = cartItemCount();
+
     if (cartCount === 0)
         cartBadge.style.display = "none";
+
     cartBadge.append(cartCount);
 
     cartIconWrapper.append(cartIcon, cartBadge);
@@ -64,52 +64,31 @@ export const navBar = (navbarBgClass) => {
 
     const navbarBrandWrapper = createElement({ type: "div", className: "container" });
     const navbarBrand = createElement({ type: "div", className: 'navbar-brand d-flex align-items-center d-lg-none navbar-logo-2' })
-
-    const navbarLogoMin = document.createElement('img');
-    navbarLogoMin.setAttribute('src', 'http://localhost:3000/images/navbar/logo-min.svg');
-    navbarLogoMin.setAttribute('alt', 'logo');
-    navbarLogoMin.setAttribute('width', '50px');
-
-
-    const navbarLogoText = document.createElement('h3');
-    navbarLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2');
-    navbarLogoText.innerText = "Shrine"
+    const navbarLogoMin = createElement({ type: "img", src: 'http://localhost:3000/images/navbar/logo-min.svg', alt: "logo-min", width: "50px" })
+    const navbarLogoText = createElement({ type: "h3", className: "glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-2", innerText: "shrine" })
 
     navbarBrand.append(navbarLogoMin, navbarLogoText);
     navbarBrandWrapper.appendChild(navbarBrand);
 
 
-    const navbarToggle = document.createElement('BUTTON');
-    navbarToggle.setAttribute('class', 'navbar-toggler');
-    navbarToggle.setAttribute('type', 'button');
+    const navbarToggle = createElement({ type: "button", isButton: true, className: 'navbar-toggler' })
     navbarToggle.setAttribute('data-bs-toggle', 'collapse');
     navbarToggle.setAttribute('data-bs-target', '#navbarSupportedContent');
-    navbarToggle.setAttribute('aria-controls', 'navbarSupportedContent');
-    navbarToggle.setAttribute('aria-expanded', 'false');
-    navbarToggle.setAttribute('aria-label', 'Toggle navigation');
     navbarBrandWrapper.appendChild(navbarToggle);
 
-    const navbarToggleIcon = document.createElement('SPAN');
-    navbarToggleIcon.setAttribute('class', 'navbar-toggler-icon');
+    const navbarToggleIcon = createElement({ type: "span", className: 'navbar-toggler-icon' })
     navbarToggle.appendChild(navbarToggleIcon);
 
-    const navbarLinksWrapper = document.createElement('DIV');
-    navbarLinksWrapper.setAttribute('class', 'collapse navbar-collapse me-lg-5');
-    navbarLinksWrapper.setAttribute('id', 'navbarSupportedContent');
+    const navbarLinksWrapper = createElement({ type: "div", id: 'navbarSupportedContent', className: 'collapse navbar-collapse me-lg-5' })
     navbarBrandWrapper.appendChild(navbarLinksWrapper);
 
-    const navbarNav = document.createElement('UL');
-    navbarNav.setAttribute('class', 'navbar-nav mx-auto gap-4 mb-2 mb-lg-0  d-flex align-items-center justify-content-center');
+    const navbarNav = createElement({ type: "ul", className: 'navbar-nav mx-auto gap-4 mb-2 mb-lg-0  d-flex align-items-center justify-content-center' })
     navbarLinksWrapper.appendChild(navbarNav);
 
     const createNavItem = (linkName) => {
-        const navItem = document.createElement('LI');
-        navItem.setAttribute('class', 'nav-item navbar-item');
+        const navItem = createElement({ type: "li", className: 'nav-item navbar-item' })
 
-        const navItemAnchor = document.createElement('A');
-        navItemAnchor.setAttribute('class', 'nav-link position-relative hover-link');
-        navItemAnchor.setAttribute('aria-current', 'page');
-        navItemAnchor.setAttribute('href', '#');
+        const navItemAnchor = createElement({ type: "a", className: 'nav-link position-relative hover-link', href: "#" });
         navItemAnchor.append(linkName);
 
         navItem.append(navItemAnchor);
@@ -122,33 +101,22 @@ export const navBar = (navbarBgClass) => {
     const donationNavItem = createNavItem("Donation");
 
 
-    const navbarLgLogo = document.createElement('A');
-    navbarLgLogo.setAttribute('class', `navbar-brand ${navbarBgClass} mx-3 position-relative navbar-logo d-none d-lg-inline-flex  align-items-center fit-content px-4`);
-    navbarLgLogo.setAttribute('href', '#');
+    const navbarLgLogo = createElement({ type: "a", className: `navbar-brand ${navbarBgClass} mx-3 position-relative navbar-logo d-none d-lg-inline-flex  align-items-center fit-content px-4`, href: "#" });
 
-    const navbarLogoLg = document.createElement('img');
-    navbarLogoLg.setAttribute('src', 'http://localhost:3000/images/navbar/logo-min.svg');
-    navbarLogoLg.setAttribute('alt', 'logo');
-    navbarLogoLg.setAttribute('width', '50px');
+    const navbarLogoLg = createElement({ type: "img", src: 'http://localhost:3000/images/navbar/logo-min.svg', alt: "logo", width: '50px', innerText: "SHRINE" })
     navbarLgLogo.appendChild(navbarLogoLg);
 
-    const navbarLgLogoText = document.createElement('H3');
-    navbarLgLogoText.setAttribute('class', 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-3');
-    navbarLgLogoText.innerText = "SHRINE";
+    const navbarLgLogoText = createElement({ type: "h3", className: 'glitten-all-caps ms-2 d-inline-block fit-content m-0 mt-3', innerText: 'Shrine' })
     navbarLgLogo.appendChild(navbarLgLogoText);
 
     const shopNavItem = createNavItem("Shop");
     const contactNavItem = createNavItem("Contacts");
 
-    const searchIcon = document.createElement('IMG');
-    searchIcon.setAttribute('src', 'http://localhost:3000/images/navbar/search.svg');
-    searchIcon.setAttribute('alt', 'search');
-
+    const searchIcon = createElement({ type: "img", src: 'http://localhost:3000/images/navbar/search.svg', alt: 'search' })
     const searchNavItem = createNavItem(searchIcon);
 
 
-    const cartNavItem = document.createElement('LI');
-    cartNavItem.setAttribute('class', 'nav-item cart');
+    const cartNavItem = createElement({ type: "li", className: 'nav-item cart' })
     navbarNav.appendChild(cartNavItem);
 
     navbarNav.append(homeNavItem, pagesNavItem, blogNavItem, donationNavItem, navbarLgLogo, shopNavItem, contactNavItem, searchNavItem, cartNavItem);
@@ -294,6 +262,7 @@ export const footer = (footerClass) => {
     footer.append(footerLogoWrapper, footerContainer, footerCopyright);
 }
 
+// heading module
 export const createHeading = (headingElement, title, subtitle, spacing = false, customClassSubt = "") => {
     const heading = createElement({ type: "h4", className: `text-wrap font-45 fw-semibold roboto-serif my-3 border-3 ps-3 border-danger border-start w-100 ${spacing ? 'my-4' : ''}`, innerText: title, })
     const subHeading = createElement({ type: "div", innerText: subtitle, className: `font-16 mw-75 ${spacing ? 'pt-2' : ''} ${customClassSubt}` })
@@ -301,6 +270,7 @@ export const createHeading = (headingElement, title, subtitle, spacing = false, 
     headingElement.append(heading, subHeading);
 }
 
+// event card
 export const createEventCard = ({ imgUrl, title, description: subtitle, button = "See more", date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const card = createElement({ type: "div", className: `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}` })
@@ -319,7 +289,7 @@ export const createEventCard = ({ imgUrl, title, description: subtitle, button =
         cardBody.append(locationElement);
     }
     if (time) {
-        const timeElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: `<img class="me-2" src="${backendUrl}/images/icons/clock.svg" width="20px" alt="clock">` + time })
+        const timeElement = createElement({ type: "h6", className: "font-16 fw-light", innerText: `<img class="me-2" src="${backendUrl}/images/icons/time.svg" width="20px" alt="clock">` + time })
         cardBody.append(timeElement);
     }
 
@@ -343,52 +313,41 @@ export const createEventCard = ({ imgUrl, title, description: subtitle, button =
 
 }
 
-export const createBlogCard = ({ imageUrl: imgUrl, title, description: subtitle, authorImgUrl: userImgUrl, readTime = "2min read", imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createForm = (parent, title, subtitle, fields, save = false) => {
+    const titleElement = createElement({ type: "h3", className: "font-26 fw-bold roboto-serif", innerText: title });
+    const subtitleElement = createElement({ type: "p", className: "font-16 fw-normal roboto-serif", innerText: subtitle })
+    parent.append(titleElement, subtitleElement)
 
-    const cardWrapper = document.createElement('div');
-    cardWrapper.setAttribute('class', 'card flex-shrink-0 position-relative z-1');
-    cardWrapper.setAttribute('style', 'max-width: 280px;aspect-ratio:1');
+    if (save) {
+        const checkBoxWrapper = createElement({ type: "div", className: "form-check" });
+        checkBoxWrapper.innerHTML = `<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+        Save my name, email, and website in this browser for the next time I comment.
+        </label>`;
 
-    const cardImage = document.createElement('img');
-    cardImage.src = backendUrl + imgUrl
-    cardImage.setAttribute('class', `card-img-top ${imgUrl}`);
-    cardImage.alt = title;
+        parent.append(checkBoxWrapper);
+    }
 
-    const cardBody = document.createElement('div');
-    cardBody.setAttribute('class', 'card-body');
+    const inputDivWrapper = createElement({ type: "div", className: "d-flex gap-2 my-3 mt-5" });
 
-    const cardTitle = document.createElement('h5');
-    cardTitle.setAttribute('class', 'card-title font-26 fw-semibold');
-    cardTitle.innerHTML = title;
+    fields.forEach(e => {
+        const inputDiv = createElement({ type: "input", className: "border rounded px-2 form-control-lg w-100" });
+        inputDiv.setAttribute("type", e.type);
+        inputDiv.setAttribute("placeholder", e.title);
 
-
-    const cardText = document.createElement('p');
-    cardText.setAttribute('class', 'card-text py-1 font-16');
-    cardText.innerHTML = subtitle;
-
-
-    const userDiv = document.createElement('div');
-    userDiv.setAttribute('class', 'd-flex align-items-center');
+        inputDivWrapper.append(inputDiv);
+    })
 
 
-    const userImg = document.createElement("img");
-    userImg.src = backendUrl + userImgUrl;
-    userImg.alt = "user";
+    const textInput = createElement({ type: "textarea", className: "border rounded p-2 form-control-lg w-100" });
+    textInput.rows = 8;
+    textInput.setAttribute("placeholder", "Enter your comment...");
+    const submitBtn = createElement({ type: "button", className: "border rounded px-4 py-2 my-4 form-control-lg btn btn-dark", innerText: "Post Comment" });
 
-    const readTimeText = document.createElement("p");
-    readTimeText.textContent = readTime;
-    readTimeText.setAttribute("class", "m-0 font-12")
-
-
-    userDiv.append(userImg, readTimeText);
-    cardBody.append(cardTitle, cardText, userDiv);
-    cardWrapper.append(cardImage, cardBody);
-
-
-    return cardWrapper;
-
+    parent.append(inputDivWrapper, textInput, submitBtn)
 }
 
+// service card
 export const createServiceCard = ({ imgUrl, title, subtitle, hasButton = true, titlecustomclass = "font-26 fw-semibold", subtitleCustomClass = "font-16 fw-light", cardCustomClass = 'border flex-shrink-0 border-0 hover-card flex-column align-items-center rounded-0 rounded-top-5 rounded-end-5', cardStyle = "max-width:250px" }) => {
 
 
@@ -418,6 +377,7 @@ export const createServiceCard = ({ imgUrl, title, subtitle, hasButton = true, t
 
 }
 
+// team card
 export const createTeamCard = ({ imageUrl, name: title, penName: subtitle, customColWrapper, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const teamWrapper = createElement({ type: "div", className: `${customColWrapper} d-flex justify-content-center` });
@@ -453,32 +413,23 @@ export const createTeamCard = ({ imageUrl, name: title, penName: subtitle, custo
     return teamWrapper;
 }
 
+// accordion module
 export const createAccordion = ({ title, subtitle, index }) => {
 
-    const accordionWrapper = document.createElement('DIV');
-    accordionWrapper.setAttribute('class', 'accordion-item border-0 border-bottom flex-shrink-0');
-
-    const accordionTitle = document.createElement('H2');
-    accordionTitle.setAttribute('class', 'accordion-header');
+    const accordionWrapper = createElement({ type: "div", className: 'accordion-item border-0 border-bottom flex-shrink-0' })
+    const accordionTitle = createElement({ type: "h2", className: "accordion-header" })
     accordionWrapper.appendChild(accordionTitle);
 
-    const accordionButton = document.createElement('BUTTON');
-    accordionButton.setAttribute('class', 'accordion-button collapsed');
-    accordionButton.setAttribute('type', 'button');
+    const accordionButton = createElement({ type: "button", className: "accordion-button collapsed", isButton: true, innerText: title })
     accordionButton.setAttribute('data-bs-toggle', 'collapse');
     accordionButton.setAttribute('data-bs-target', `#collapse${index}`);
-    accordionButton.textContent = title;
     accordionTitle.appendChild(accordionButton);
 
-    const accordionContentDiv = document.createElement('DIV');
-    accordionContentDiv.setAttribute('id', `collapse${index}`);
-    accordionContentDiv.setAttribute('class', 'accordion-collapse collapse');
+    const accordionContentDiv = createElement({ type: "div", id: `collapse${index}`, className: 'accordion-collapse collapse' })
     accordionContentDiv.setAttribute('data-bs-parent', '#accordionExample');
     accordionWrapper.appendChild(accordionContentDiv);
 
-    const accordionBody = document.createElement('DIV');
-    accordionBody.setAttribute('class', 'accordion-body');
-    accordionBody.textContent = subtitle;
+    const accordionBody = createElement({ type: "div", className: "accordion-body", innerText: subtitle })
     accordionContentDiv.appendChild(accordionBody);
 
 
@@ -493,23 +444,18 @@ export const pagingBreadcrumb = (pathElement, url) => {
     pathElement.setAttribute("class", "d-flex justify-content-center my-3");
     pathElement.setAttribute("style", "--bs-breadcrumb-divider: '>';");
 
-    const breadcrumbList = document.createElement("ol");
-    breadcrumbList.setAttribute("class", "breadcrumb m-0 font-16");
+    const breadcrumbList = createElement({ type: "ol", className: "breadcrumb m-0 font-16" })
 
 
     url.forEach((urlItem, index) => {
         if (urlItem) {
-            const item = document.createElement("li");
-            item.classList.add("breadcrumb-item");
+            const item = createElement({ type: "li", className: "breadcrumb-item" })
 
             if (index > 0) {
                 item.classList.add("fw-bold");
             }
 
-            const link = document.createElement("a");
-            link.setAttribute("class", "text-decoration-none font-12 text-black text-uppercase")
-            link.href = "#";
-            link.innerText = urlItem;
+            const link = createElement({ type: "a", className: "text-decoration-none font-12 text-black text-uppercase", href: "#", innerText: urlItem })
 
             item.append(link);
             breadcrumbList.append(item);
@@ -521,14 +467,14 @@ export const pagingBreadcrumb = (pathElement, url) => {
 }
 
 // team card Hroizontal
-export const createHorizontalTeamCard = ({ imgUrl, title, description: subtitle, button = "See more", date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
+export const createHorizontalEventCard = ({ imgUrl, title, description: subtitle, button = "See more", date, location, time, imgCustomClass = '', bodyCustomClass = '', cardCustomClass = '' }) => {
 
     const card = createElement({ type: "div", className: `card mb-3 overflow-hidden flex-shrink-0 ${cardCustomClass}` });
-    const imgWrapper=createElement({type:"div",className:"position-relative"});
+    const imgWrapper = createElement({ type: "div", className: "position-relative" });
     const imageElement = createElement({ type: "img", src: backendUrl + imgUrl, className: `w-100 object-fit-cover ${imgCustomClass}`, alt: title });
-    const calendarOverlay=createElement({type:"span",className:"calendar-card d-inline-block rounded-top-2 position-absolute bottom-0",});
-    
-    imgWrapper.append(imageElement,calendarOverlay);
+    const calendarOverlay = createElement({ type: "span", className: "calendar-card d-inline-block rounded-top-2 position-absolute bottom-0", });
+
+    imgWrapper.append(imageElement, calendarOverlay);
 
     const cardBody = createElement({ type: "div", className: `card-body ${bodyCustomClass}` });
 
@@ -537,7 +483,7 @@ export const createHorizontalTeamCard = ({ imgUrl, title, description: subtitle,
         cardBody.append(dateElement);
     }
 
-    const dataWrapper=createElement({type:"div",className:"d-flex gap-3"});
+    const dataWrapper = createElement({ type: "div", className: "d-flex gap-3" });
     cardBody.append(dataWrapper);
 
     if (time) {

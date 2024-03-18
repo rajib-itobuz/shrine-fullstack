@@ -121,6 +121,14 @@ body .nav-underline {
   --bs-nav-link-hover-color: #2c3139;
 }
 
+.pagination li a:is(.active) {
+  background-color: #c0304f !important;
+  color: #fff !important;
+}
+.pagination li a:not(.active) {
+  color: #000 !important;
+}
+
 .navbar-logo {
   translate: 0% 30%;
 }

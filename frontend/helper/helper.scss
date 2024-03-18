@@ -132,6 +132,17 @@ body {
 
 }
 
+.pagination li {
+    & a:is(.active) {
+        background-color: #c0304f !important;
+        color: #fff !important;
+    }
+
+    & a:not(.active) {
+        color: #000 !important;
+    }
+}
+
 
 
 // navbar
@@ -161,9 +172,10 @@ body {
 
 
 // team card css
-.social-icons{
+.social-icons {
     height: 30px;
 }
+
 .social-icons div img {
     height: 20px;
     width: 20px;
@@ -184,7 +196,7 @@ body {
 }
 
 
-.social-icons > div {
+.social-icons>div {
     visibility: hidden;
     opacity: 0;
     height: 0px;
